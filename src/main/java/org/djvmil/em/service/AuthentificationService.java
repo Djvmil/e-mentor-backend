@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 public class AuthentificationService {
 
 
-    @Autowired
+    @Autowired // like @Inject or @Ressource in JEE
     private IAuthentificationRepository repository;
 
     public User login(String login, String password){

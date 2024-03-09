@@ -9,7 +9,7 @@ import org.springframework.stereotype.Controller;
 //@Component
 public class AuthentificationController {
 
-    @Autowired
+    @Autowired // like @Inject or @Ressource in JEE
     private AuthentificationService service;
 
 
