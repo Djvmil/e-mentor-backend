@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!--beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd" default-autowire="byType" -->
+
+    <context:annotation-config/>
+    <context:property-placeholder location="classpath:application.proporties"/>
+    <context:component-scan base-package="org.djvmil.em"/>
+
+    <!--bean id="authRepository" class="org.djvmil.em.repository.AuthentificationFileRepository" autowire="byType">
+        <property name="filePath" value="user.txt"/>
+    </bean>
+
+    <bean id="authService" class="org.djvmil.em.service.AuthentificationService"  autowire="byType"/>
+    <bean class="org.djvmil.em.controler.AuthentificationController"  autowire="byType"/-->
+
+    <!--bean id="authRepository" class="org.djvmil.em.repository.AuthentificationFileRepository" autowire="byName">
+        <property name="filePath" value="user.txt"/>
+    </bean>
+
+    <bean id="authService" class="org.djvmil.em.service.AuthentificationService"  autowire="byName"/>
+
+    <bean id="authController" class="org.djvmil.em.controler.AuthentificationController"  autowire="byName"/-->
+
+    <!--bean id="authRepository" class="org.djvmil.em.repository.AuthentificationFileRepository">
+        <property name="filePath" value="user.txt"/>
+    </bean>
+
+    <bean id="authService" class="org.djvmil.em.service.AuthentificationService">
+        <property name="repository" ref="authRepository"/>
+    </bean>
+
+    <bean id="authController" class="org.djvmil.em.controler.AuthentificationController">
+    <property name="service" ref="authService"/>
+    </bean-->
+</beans>
