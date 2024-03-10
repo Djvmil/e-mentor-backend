@@ -13,18 +13,20 @@
     http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context
     http://www.springframework.org/schema/context/spring-context.xsd" default-autowire="byType" -->
 
-    <context:annotation-config/>
+    <!--context:annotation-config/>
     <context:property-placeholder location="classpath:application.proporties"/>
-    <context:component-scan base-package="org.djvmil.em"/>
+    <context:component-scan base-package="org.djvmil.em.repository.file"/>
+    <context:component-scan base-package="org.djvmil.em.service"/>
+    <context:component-scan base-package="org.djvmil.em.controler"/-->
 
-    <!--bean id="authRepository" class="org.djvmil.em.repository.AuthentificationFileRepository" autowire="byType">
+    <!--bean id="authRepository" class="org.djvmil.em.repository.file.AuthentificationFileRepository" autowire="byType">
         <property name="filePath" value="user.txt"/>
     </bean>
 
     <bean id="authService" class="org.djvmil.em.service.AuthentificationService"  autowire="byType"/>
     <bean class="org.djvmil.em.controler.AuthentificationController"  autowire="byType"/-->
 
-    <!--bean id="authRepository" class="org.djvmil.em.repository.AuthentificationFileRepository" autowire="byName">
+    <!--bean id="authRepository" class="org.djvmil.em.repository.file.AuthentificationFileRepository" autowire="byName">
         <property name="filePath" value="user.txt"/>
     </bean>
 
@@ -32,7 +34,7 @@
 
     <bean id="authController" class="org.djvmil.em.controler.AuthentificationController"  autowire="byName"/-->
 
-    <!--bean id="authRepository" class="org.djvmil.em.repository.AuthentificationFileRepository">
+    <!--bean id="authRepository" class="org.djvmil.em.repository.file.AuthentificationFileRepository">
         <property name="filePath" value="user.txt"/>
     </bean>
 

@@ -1,1 +1,5 @@
 repository.filePath=user.txt
+server.port=80
+server.servlet.context-path=/em
+#spring.resources.static-locations=file:/Users/moustaphas.dieme/Desktop/EntretienMentor/emfront/
+spring.resources.static-locations=file:src/main/resources/static/

@@ -1,11 +1,12 @@
-package org.djvmil.em.repository;
+package org.djvmil.em.repository.db;
 
 import org.djvmil.em.entity.User;
+import org.djvmil.em.repository.IAuthentificationRepository;
 import org.springframework.stereotype.Repository;
 
-@Repository
+//@Repository
 //@Component
-public class AuthentificationDBRepository implements IAuthentificationRepository{
+public class AuthentificationDBRepository implements IAuthentificationRepository {
 
     @Override
     public User login(String login, String password){

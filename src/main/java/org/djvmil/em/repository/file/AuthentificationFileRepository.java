@@ -1,6 +1,7 @@
-package org.djvmil.em.repository;
+package org.djvmil.em.repository.file;
 
 import org.djvmil.em.entity.User;
+import org.djvmil.em.repository.IAuthentificationRepository;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Repository;
 

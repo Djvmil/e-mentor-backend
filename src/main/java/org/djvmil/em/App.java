@@ -2,8 +2,10 @@ package org.djvmil.em;
 
 import org.djvmil.em.controler.AuthentificationController;
 import org.djvmil.em.entity.User;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import java.util.Scanner;
 
@@ -11,12 +13,21 @@ import java.util.Scanner;
  * Hello world!
  *
  */
+
+@SpringBootApplication
+//@Configuration
+//@ComponentScan(basePackages = {"org.djvmil.em.repository.file", "org.djvmil.em.service", "org.djvmil.em.controler"})
+//@ComponentScan()
+//@EnableAutoConfiguration
+
+//@ImportResource("classpath:applicationContext.xml")
+//@PropertySource("classpath:application.proporties")
 public class App 
 {
 
     public static void main( String[] args )
     {
-        ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
+        ApplicationContext context = SpringApplication.run(App.class, args);
 
 
         AuthentificationController controller = context.getBean(AuthentificationController.class);
