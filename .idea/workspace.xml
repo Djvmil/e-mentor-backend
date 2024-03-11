@@ -5,16 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9f3b0c49-c930-49af-bd9e-defc0c183504" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/djvmil/em/AppConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/djvmil/em/AppFileConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/home.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/djvmil/em/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/djvmil/em/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/djvmil/em/repository/AuthentificationDBRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/djvmil/em/repository/db/AuthentificationDBRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/djvmil/em/repository/AuthentificationFileRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/djvmil/em/repository/file/AuthentificationFileRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/djvmil/em/controler/AuthentificationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/djvmil/em/controler/AuthentificationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/djvmil/em/repository/IAuthentificationRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/djvmil/em/repository/IAuthentificationRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/djvmil/em/repository/db/AuthentificationDBRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/djvmil/em/repository/db/AuthentificationDBRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/djvmil/em/repository/file/AuthentificationFileRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/djvmil/em/repository/file/AuthentificationFileRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/djvmil/em/service/AuthentificationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/djvmil/em/service/AuthentificationService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.proporties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.proporties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/applicationContext.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/applicationContext.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/user.txt" beforeDir="false" afterPath="$PROJECT_DIR$/user.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -55,14 +55,15 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "master",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/Users/moustaphas.dieme/Desktop/EntretienMentor/EntretienMentor-Backend/src/main/resources",
+    "last_opened_file_path": "/Users/moustaphas.dieme/Desktop/EntretienMentor/EntretienMentor-Backend/src/main/resources/templates",
     "settings.editor.selected.configurable": "project.propCompiler"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/resources/templates" />
       <recent name="$PROJECT_DIR$/src/main/resources" />
     </key>
   </component>

@@ -4,6 +4,8 @@ import org.djvmil.em.entity.User;
 import org.djvmil.em.repository.IAuthentificationRepository;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
 //@Repository
 //@Component
 public class AuthentificationDBRepository implements IAuthentificationRepository {
@@ -19,5 +21,10 @@ public class AuthentificationDBRepository implements IAuthentificationRepository
     public Boolean register(User user){
 
         return true;
+    }
+
+    @Override
+    public List<User> list() {
+        return null;
     }
 }

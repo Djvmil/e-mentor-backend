@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Repository;
 
 import java.io.FileWriter;
+import java.util.List;
 
 @Repository
 //@Component
@@ -52,5 +53,20 @@ public class AuthentificationFileRepository implements IAuthentificationReposito
         }
 
         return true;
+    }
+
+    @Override
+    public List<User> list() {
+        User user = new User();
+        user.setFirstname("Mbaye");
+        user.setLastname("Ndoye");
+        user.setEmail("ndoye@em.fr");
+
+        User user1 = new User();
+        user1.setFirstname("Omar");
+        user1.setLastname("Gaye");
+        user1.setEmail("gaye@em.fr");
+
+        return List.of(user, user1);
     }
 }

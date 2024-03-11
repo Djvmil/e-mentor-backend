@@ -5,6 +5,8 @@ import org.djvmil.em.repository.IAuthentificationRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 //@Component
 public class AuthentificationService {
@@ -20,5 +22,9 @@ public class AuthentificationService {
     public Boolean register(User user){
 
         return repository.register(user);
+    }
+
+    public List<User> list(){
+        return repository.list();
     }
 }
