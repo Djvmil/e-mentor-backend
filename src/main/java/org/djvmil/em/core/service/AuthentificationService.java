@@ -1,7 +1,7 @@
-package org.djvmil.em.service;
+package org.djvmil.em.core.service;
 
-import org.djvmil.em.entity.User;
-import org.djvmil.em.repository.IAuthentificationRepository;
+import org.djvmil.em.core.entity.User;
+import org.djvmil.em.core.repository.IAuthentificationRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

@@ -1,4 +1,4 @@
-package org.djvmil.em.entity;
+package org.djvmil.em.core.entity;
 
 public class User {
     private String firstname;

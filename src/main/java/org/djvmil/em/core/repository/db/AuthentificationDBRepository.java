@@ -1,8 +1,7 @@
-package org.djvmil.em.repository.db;
+package org.djvmil.em.core.repository.db;
 
-import org.djvmil.em.entity.User;
-import org.djvmil.em.repository.IAuthentificationRepository;
-import org.springframework.stereotype.Repository;
+import org.djvmil.em.core.entity.User;
+import org.djvmil.em.core.repository.IAuthentificationRepository;
 
 import java.util.List;
 

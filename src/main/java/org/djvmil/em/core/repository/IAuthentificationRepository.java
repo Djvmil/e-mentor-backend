@@ -1,6 +1,6 @@
-package org.djvmil.em.repository;
+package org.djvmil.em.core.repository;
 
-import org.djvmil.em.entity.User;
+import org.djvmil.em.core.entity.User;
 
 import java.util.List;
 

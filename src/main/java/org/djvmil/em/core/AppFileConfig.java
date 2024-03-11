@@ -1,4 +1,4 @@
-package org.djvmil.em;
+package org.djvmil.em.core;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
