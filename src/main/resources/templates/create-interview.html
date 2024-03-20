@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="http://www.thymleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Home </title>
+    <link th:src="@{/css/style.css}" rel="stylesheet"/>
+
+</head>
+<body>
+
+<h1 >Users: </h1>
+<span th:text="${#locale.country}">US</span>
+<a href="add" > Add User </a>
+<section class="container-form">
+
+    <form th:action="@{/interview}" method="POST" th:object="${interviewForm}">
+        <div class="user-form">
+            <p>
+                Firstname: <input type="text" th:field="*{firstname}" />
+            </p>
+            <div th:if="*{#fields.hasErrors('firstname')}" th:errors="*{firstname}" ></div>
+            <p>
+                Lastname: <input type="text" th:field="*{lastname}" />
+            </p>
+            <div th:if="*{#fields.hasErrors('lastname')}" th:errors="*{lastname}" ></div>
+            <p>
+                Email: <input type="text" th:field="*{email}"/>
+            </p>
+            <div th:if="*{#fields.hasErrors('email')}" th:errors="*{email}" ></div>
+            <!--p>
+                Password: <input type="password" th:field="*{password}"/>
+            </p-->
+
+        </div>
+        <div class="interview-form">
+            <p>
+                Title: <input type="text" th:field="*{title}" />
+            </p>
+            <div th:if="*{#fields.hasErrors('title')}" th:errors="*{title}" ></div>
+            <p>
+                Description: <input type="text" th:field="*{description}" />
+            </p>
+            <div th:if="*{#fields.hasErrors('description')}" th:errors="*{description}" ></div>
+            <p>
+                RequiredSkills: <input type="text" th:field="*{requiredSkills}"/>
+            </p>
+            <div th:if="*{#fields.hasErrors('requiredSkills')}" th:errors="*{requiredSkills}" ></div>
+            <p>
+                Company: <input type="text" th:field="*{company}"/>
+            </p>
+            <div th:if="*{#fields.hasErrors('company')}" th:errors="*{company}" ></div>
+            <!--p>
+                Password: <input type="password" th:field="*{password}"/>
+            </p-->
+
+        </div>
+        <div class="question-form">
+            <p>
+                QuestionText: <input type="text" th:field="*{questionText}" />
+            </p>
+            <div th:if="*{#fields.hasErrors('questionText')}" th:errors="*{questionText}" ></div>
+            <p>
+                QuestionType: <input type="text" th:field="*{questionType}" />
+            </p>
+            <div th:if="*{#fields.hasErrors('questionType')}" th:errors="*{questionType}" ></div>
+
+        </div>
+        <div class="response-form">
+            <p>
+                ResponseText: <input type="text" th:field="*{responseText}" />
+            </p>
+            <div th:if="*{#fields.hasErrors('responseText')}" th:errors="*{responseText}" ></div>
+            <p>
+                Score: <input type="number" th:field="*{score}" />
+            </p>
+            <div th:if="*{#fields.hasErrors('score')}" th:errors="*{score}" ></div>
+
+        </div>
+
+        <div class="response-form">
+            <input type="submit" value="Save Interview"/>
+        </div>
+    </form>
+</section>
+
+<script type="text/javascript" th:src="@{/js/interview_script.js}"></script>
+</body>
+</html>

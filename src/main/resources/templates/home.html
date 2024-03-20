@@ -2,19 +2,37 @@
 <html lang="en"  xmlns:th="http://www.thymleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Hello </title>
+    <title>Home </title>
+    <link th:src="@{/css/style.css}" rel="stylesheet"/>
+
 </head>
 <body>
 
-    <h1>Hello Djamil testss</h1>
+    <h1 >Users: </h1>
     <span th:text="${#locale.country}">US</span>
-
-    <table border="1">
+    <a href="auth/add" > Add User </a>
+    <!--table border="1">
         <tr th:each="user: ${usersAtr}">
+            <td> <a th:href="${user.id}"  th:text="${user.id}"> </a> </td>
             <td th:text="${user.firstname}"></td>
             <td th:text="${user.lastname}"></td>
             <td th:text="${user.email}"></td>
         </tr>
-    </table>
+    </table-->
+
+    <section class="container">
+        <div class="left-half">
+            <article id="user-list">
+
+            </article>
+        </div>
+        <div class="right-half">
+            <article id="user-detail">
+
+            </article>
+        </div>
+    </section>
+
+<script type="text/javascript" th:src="@{/js/script.js}"></script>
 </body>
 </html>

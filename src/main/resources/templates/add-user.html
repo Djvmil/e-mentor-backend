@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="http://www.thymleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>User </title>
+</head>
+<body>
+
+    <h1 >Add User: </h1>
+
+    <!--form th:action="@{/add-user}" method="POST"-->
+    <!--form th:action="@{/auth}" method="POST" th:object="${userForm}"-->
+    <form th:action="@{/auth}" method="POST" th:object="${userForm}">
+        <p>
+            Firstname: <input type="text" th:field="*{firstname}" />
+        </p>
+        <div th:if="*{#fields.hasErrors('firstname')}" th:errors="*{firstname}" ></div>
+        <p>
+            Lastname: <input type="text" th:field="*{lastname}" />
+        </p>
+        <div th:if="*{#fields.hasErrors('lastname')}" th:errors="*{lastname}" ></div>
+        <p>
+            Email: <input type="text" th:field="*{email}"/>
+        </p>
+        <div th:if="*{#fields.hasErrors('email')}" th:errors="*{email}" ></div>
+        <!--p>
+            Password: <input type="password" th:field="*{password}"/>
+        </p-->
+
+        <input type="submit" value="OK"/>
+    </form>
+
+</body>
+</html>
