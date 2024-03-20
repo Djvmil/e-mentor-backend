@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="http://www.thymleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>User Detail </title>
+</head>
+<body>
+
+<h1>Hello Djamil tests</h1>
+<span th:text="${#locale.country}">US</span>
+
+<p>
+    Id: <span th:text="${user.id}"></span>
+</p>
+<p>
+    Firstname: <span th:text="${user.firstname}"></span>
+</p>
+<p>
+    Lastname: <span th:text="${user.lastname}"></span>
+</p>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="http://www.thymleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Home </title>
+    <link th:src="@{/css/style.css}" rel="stylesheet"/>
+
+</head>
+<body>
+
+<h1 >Interview List: </h1>
+<span th:text="${#locale.country}">US</span>
+<a href="interview/create" > Add interview </a>
+
+<section class="container">
+
+    <div class="user">
+        <article id="user-section">
+
+        </article>
+    </div>
+    <br/>
+    <div class="interview">
+        <article id="interview-section">
+
+        </article>
+    </div>
+
+    <br/>
+
+    <div class="question">
+        <article id="question-section">
+
+        </article>
+    </div>
+
+    <br/>
+
+    <div class="response">
+        <article id="response-section">
+
+        </article>
+    </div>
+</section>
+<script type="text/javascript" th:src="@{/js/interview_script.js}"></script>
+</body>
+</html>
