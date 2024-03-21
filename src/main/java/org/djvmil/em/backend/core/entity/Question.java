@@ -4,7 +4,7 @@ package org.djvmil.em.backend.core.entity;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "Question")
+@Table(name = "Questions")
 //@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class Question {
 

@@ -49,7 +49,7 @@ public class QuestionController {
             return "add-user";
 
         User user = new User();
-        user.setId(123L);
+        user.setUserID(123L);
         user.setFirstname(userAtt.getFirstname());
         user.setLastname(userAtt.getLastname());
         user.setEmail(userAtt.getEmail());

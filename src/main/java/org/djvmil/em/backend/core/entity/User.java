@@ -5,11 +5,11 @@ package org.djvmil.em.backend.core.entity;
 import jakarta.persistence.*;
 
 @Entity
-//@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
+@Table(name = "Users")
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id = 1L;
+    private Long userID = 1L;
 
     @Column(nullable = false,length = 50)
     private String firstname;
@@ -38,7 +38,7 @@ public class User {
     }
 
     public User(Long id, String firstname, String lastname, String role, String genre, String country, String phoneNumber, String email, String passwors, String birthDate) {
-        this.id = id;
+        this.userID = id;
         this.firstname = firstname;
         this.lastname = lastname;
         this.role = role;
@@ -50,12 +50,12 @@ public class User {
         this.birthDate = birthDate;
     }
 
-    public Long getId() {
-        return id;
+    public Long getUserID() {
+        return userID;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setUserID(Long userID) {
+        this.userID = userID;
     }
 
     public String getFirstname() {
@@ -149,7 +149,7 @@ public class User {
     @Override
     public String toString() {
         return "User{" +
-                "id ='" + id + '\'' +
+                "id ='" + userID + '\'' +
                 "firstname='" + firstname + '\'' +
                 ", lastname='" + lastname + '\'' +
                 ", role='" + role + '\'' +
@@ -165,6 +165,6 @@ public class User {
     }
 
     public String formatToDB() {
-        return id.toString() + ';' +firstname + ';' + lastname + ';' + role + ';' + genre + ';' + country + ';' + phoneNumber + ';' + email + ';' + password + ';' + birthDate + ';' + isEmailVerified + ';' + isPhoneNumbeVerified + '\n';
+        return userID.toString() + ';' +firstname + ';' + lastname + ';' + role + ';' + genre + ';' + country + ';' + phoneNumber + ';' + email + ';' + password + ';' + birthDate + ';' + isEmailVerified + ';' + isPhoneNumbeVerified + '\n';
     }
 }

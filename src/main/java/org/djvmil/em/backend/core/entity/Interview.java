@@ -6,7 +6,7 @@ import jakarta.persistence.*;
 import java.time.LocalDateTime;
 
 @Entity
-@Table(name = "Interview")
+@Table(name = "Interviews")
 //@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class Interview {
 
@@ -18,6 +18,8 @@ public class Interview {
     private String description;
     private String requiredSkills;
     private String company;
+
+    @Column(name="datetime")
     private LocalDateTime dateTime;
 
     public Interview() {
