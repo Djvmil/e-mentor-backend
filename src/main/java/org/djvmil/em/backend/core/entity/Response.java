@@ -3,7 +3,7 @@ package org.djvmil.em.backend.core.entity;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "Response")
+@Table(name = "Responses")
 @NamedEntityGraph(name = "response.join.tables",
         attributeNodes = {
         @NamedAttributeNode("user"),

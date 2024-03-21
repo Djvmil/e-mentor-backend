@@ -11,13 +11,16 @@ spring.web.locale=us_US
 spring.datasource.url=jdbc:postgresql://localhost:5432/em_backend_db
 spring.datasource.username=em_db_user
 spring.datasource.password=@em_db_server.20.24.15
+#On commente cette ligne pour que spring.datasource.initialization-mode marche
 #spring.jpa.hibernate.ddl-auto=<create | create-drop | update | validate | none>
-spring.jpa.hibernate.ddl-auto=update
+#spring.jpa.hibernate.ddl-auto=create
 #spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.PostgreSQLDialect
 #spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
 spring.jpa.show-sql=true
 spring.jpa.open-in-view=false
 spring.jpa.properties.hibernate.format_sql=true
 #spring.jpa.generate-ddl=true
-spring.jpa.generate-ddl=true
-#spring.datasource.initialization-mode=always
+#Et il faudra aussi indiquer explicitement que l'on ne veut pas l'auto génération du DDL par Hibernate.
+spring.jpa.generate-ddl=false
+#Generation par schema
+spring.datasource.initialization-mode=always
