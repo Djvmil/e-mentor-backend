@@ -65,3 +65,9 @@ INSERT INTO Tips (title, description) VALUES
 INSERT INTO TipCategories (tipID, category) VALUES
 (1, 'Entretien d''embauche'),
 (2, 'Développement personnel');
+
+INSERT INTO Responses (userID, interviewID, questionID, response_text, score) VALUES
+(1, 1, 1, 'Je suis un développeur web passionné avec 2 ans d''expérience dans le développement de sites web responsives.', NULL),
+(1, 1, 2, 'Mes compétences techniques incluent HTML, CSS, JavaScript et React.', NULL),
+(2, 2, 1, 'Je suis un gestionnaire de projet avec 5 ans d''expérience dans le secteur de la consultation.', NULL),
+(2, 2, 2, 'Mes compétences techniques incluent la maîtrise de Microsoft Project et la gestion agile.', NULL);
