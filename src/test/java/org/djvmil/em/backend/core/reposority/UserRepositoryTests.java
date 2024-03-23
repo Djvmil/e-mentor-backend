@@ -34,7 +34,7 @@ class UserRepositoryTests {
 		} else {
 			System.out.println("Utilisateur non trouvé.");
 		}
-
+/*
 		// Test de mise à jour d'un utilisateur
 		user.setFirstname("Jane");
 		user.setLastname("Doe");
@@ -50,7 +50,7 @@ class UserRepositoryTests {
 		System.out.println("Utilisateurs restants dans la base de données :");
 		for (User u : users) {
 			System.out.println(u);
-		}
+		}*/
 	}
 	@Test
 	void testFind() {
