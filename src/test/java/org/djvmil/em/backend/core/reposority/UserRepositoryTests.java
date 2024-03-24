@@ -40,7 +40,7 @@ class UserRepositoryTests {
 		user.setLastname("Doe");
 		System.out.println("Utilisateur récupéré befor update: " + user);
 		repository.save(user);
-
+*/
 		// Test de suppression d'un utilisateur
 		repository.delete(user);
 		System.out.println("Utilisateur supprimé.");
@@ -50,7 +50,7 @@ class UserRepositoryTests {
 		System.out.println("Utilisateurs restants dans la base de données :");
 		for (User u : users) {
 			System.out.println(u);
-		}*/
+		}
 	}
 	@Test
 	void testFind() {

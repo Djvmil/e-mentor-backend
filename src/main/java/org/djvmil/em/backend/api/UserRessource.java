@@ -6,8 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/api/user")
-public class AuthentificationRessource {
+@RequestMapping("/api/users")
+public class UserRessource {
 
     @Autowired // like @Inject or @Ressource in JEE
     private AuthService service;
