@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/users")
+@CrossOrigin
 public class UserRessource {
 
     @Autowired // like @Inject or @Ressource in JEE

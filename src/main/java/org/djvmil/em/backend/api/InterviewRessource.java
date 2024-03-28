@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/interviews")
+@CrossOrigin
 public class InterviewRessource {
 
     @Autowired
