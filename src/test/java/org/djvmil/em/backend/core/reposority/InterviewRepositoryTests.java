@@ -1,10 +1,7 @@
 package org.djvmil.em.backend.core.reposority;
 
 import org.djvmil.em.backend.core.entity.Interview;
-import org.djvmil.em.backend.core.entity.User;
-import org.djvmil.em.backend.core.repository.IAuthRepository;
 import org.djvmil.em.backend.core.repository.IInterviewRepository;
-import org.djvmil.em.backend.core.repository.IResponseRepository;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

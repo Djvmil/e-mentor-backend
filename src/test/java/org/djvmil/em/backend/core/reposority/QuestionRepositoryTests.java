@@ -1,8 +1,6 @@
 package org.djvmil.em.backend.core.reposority;
 
 import org.djvmil.em.backend.core.entity.Question;
-import org.djvmil.em.backend.core.entity.User;
-import org.djvmil.em.backend.core.repository.IAuthRepository;
 import org.djvmil.em.backend.core.repository.IQuestionRepository;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
