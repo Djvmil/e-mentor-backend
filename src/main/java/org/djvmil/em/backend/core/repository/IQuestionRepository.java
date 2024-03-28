@@ -9,4 +9,5 @@ public interface IQuestionRepository extends CrudRepository<Question, Long> {
     Iterable<Question> findResponseByQuestionText(String questionText);
     Iterable<Question> findResponseByQuestionTextContains(String contains);
     Iterable<Question> findResponseByQuestionType(String questionType);
+    Iterable<Question> findOrderByQuestionTypeASC(String questionType);
 }

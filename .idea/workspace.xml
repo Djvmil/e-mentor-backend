@@ -4,25 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9f3b0c49-c930-49af-bd9e-defc0c183504" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/java/org/djvmil/em/backend/core/reposority/InterviewRepositoryTests.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/org/djvmil/em/backend/core/reposority/QuestionRepositoryTests.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/org/djvmil/em/backend/core/reposority/ResponseRepositoryTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/djvmil/em/backend/core/entity/Interview.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/djvmil/em/backend/core/entity/Interview.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/djvmil/em/backend/core/entity/Question.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/djvmil/em/backend/core/entity/Question.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/djvmil/em/backend/core/entity/Response.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/djvmil/em/backend/core/entity/Response.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/djvmil/em/backend/core/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/djvmil/em/backend/core/entity/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/djvmil/em/backend/core/repository/IAuthRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/djvmil/em/backend/core/repository/IAuthRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/djvmil/em/backend/core/repository/IInterviewRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/djvmil/em/backend/core/repository/IInterviewRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/djvmil/em/backend/core/repository/IQuestionRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/djvmil/em/backend/core/repository/IQuestionRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/djvmil/em/backend/core/repository/IResponseRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/djvmil/em/backend/core/repository/IResponseRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/djvmil/em/backend/core/repository/file/AuthFileRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/djvmil/em/backend/core/repository/file/AuthFileRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/data.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/data.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/djvmil/em/backend/BackendApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/djvmil/em/backend/BackendApplicationTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/djvmil/em/backend/core/reposority/UserRepositoryTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/djvmil/em/backend/core/reposority/UserRepositoryTests.java" afterDir="false" />
-    </list>
+    <list default="true" id="9f3b0c49-c930-49af-bd9e-defc0c183504" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -66,6 +48,7 @@
   "keyToString": {
     "Application.app.executor": "Run",
     "DefaultHtmlFileTemplate": "HTML File",
+    "JUnit.InterviewRepositoryTests.executor": "Run",
     "JUnit.ResponseRepositoryTests.executor": "Run",
     "JUnit.UserRepositoryTests.executor": "Run",
     "JUnit.UserRepositoryTests.testCreate.executor": "Run",
