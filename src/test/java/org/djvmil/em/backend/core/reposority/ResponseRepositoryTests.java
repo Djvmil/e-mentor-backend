@@ -15,7 +15,7 @@ import org.springframework.test.context.event.annotation.BeforeTestMethod;
 import java.time.LocalDateTime;
 import java.util.Optional;
 
-//@SpringBootTest
+@SpringBootTest
 class ResponseRepositoryTests {
 
 	@Autowired

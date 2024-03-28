@@ -11,7 +11,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.Optional;
 
-//@SpringBootTest
+@SpringBootTest
 class QuestionRepositoryTests {
 
 	@Autowired
