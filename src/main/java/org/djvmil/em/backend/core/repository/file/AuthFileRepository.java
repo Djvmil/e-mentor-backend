@@ -67,4 +67,24 @@ public class AuthFileRepository implements IAuthRepository {
     public void deleteAll() {
 
     }
+
+    @Override
+    public Iterable<User> findUserByFirstname(String firstname) {
+        return null;
+    }
+
+    @Override
+    public Iterable<User> findUserByLastname(String lastname) {
+        return null;
+    }
+
+    @Override
+    public Iterable<User> findUserByGenre(String genre) {
+        return null;
+    }
+
+    @Override
+    public Iterable<User> findUserByRole(String role) {
+        return null;
+    }
 }

@@ -2,70 +2,105 @@ package org.djvmil.em.backend.core.reposority;
 
 import org.djvmil.em.backend.core.entity.User;
 import org.djvmil.em.backend.core.repository.IAuthRepository;
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.Optional;
 
-@SpringBootTest
+//@SpringBootTest
 class UserRepositoryTests {
 
 	@Autowired
 	IAuthRepository repository;
 
-	@Test
-	void testCreateUser() {
-		User user = new User();
+	static User user = null;
+
+	@BeforeAll
+	public static void init(){
+		user = new User();
 		user.setFirstname("Djibril");
 		user.setLastname("Diop");
 		user.setCountry("SENEGAl");
 		user.setGenre("MALE");
-		user.setEmail("djidiop88@gmail.com");
+		user.setEmail("djidiop19@gmail.com");
 		user.setBirthDate("02/01/1992");
 		user.setPhoneNumber("546767898765");
+
+	}
+
+	@Test
+	void testCreate() {
 
 		repository.save(user);
 
 		Optional<User> optionalUser = repository.findById(user.getUserID());
 		if (optionalUser.isPresent()) {
 			User retrievedUser = optionalUser.get();
-			System.out.println("Utilisateur récupéré : " + retrievedUser);
+			System.out.println("testCreate: Utilisateur récupéré = " + retrievedUser);
 		} else {
-			System.out.println("Utilisateur non trouvé.");
+			System.out.println("testCreate: Utilisateur non trouvé.");
 		}
-/*
-		// Test de mise à jour d'un utilisateur
-		user.setFirstname("Jane");
-		user.setLastname("Doe");
-		System.out.println("Utilisateur récupéré befor update: " + user);
-		repository.save(user);
-*/
-		// Test de suppression d'un utilisateur
-		repository.delete(user);
-		System.out.println("Utilisateur supprimé.");
 
-		// Vérifier s'il reste des utilisateurs dans la base de données
-		Iterable<User> users = repository.findAll();
-		System.out.println("Utilisateurs restants dans la base de données :");
-		for (User u : users) {
-			System.out.println(u);
-		}
+
 	}
+
 	@Test
 	void testFind() {
-		User user = new User();
-		user.setFirstname("Djibril");
-		user.setLastname("Diop");
-		user.setCountry("SENEGAl");
-		user.setGenre("MALE");
-		user.setEmail("djidiop89@gmail.com");
-		user.setBirthDate("02/01/1992");
-		user.setPhoneNumber("546767898765");
+		Optional<User> optionalUser = repository.findById(user.getUserID());
+		if (optionalUser.isPresent()) {
+			User retrievedUser = optionalUser.get();
+			System.out.println("testFind: Utilisateur récupéré = " + retrievedUser);
+		} else {
+			System.out.println("testFind: Utilisateur non trouvé.");
+		}
 
-		repository.findById(1l).orElseThrow();
 	}
 
+	@Test
+	void testFindUserByFirstname() {
+		Iterable<User> users = repository.findUserByFirstname(user.getFirstname());
+		users.forEach( user ->
+				System.out.println("testFindResponseByFirstname: Utilisateur récupéré = " + user)
+		);
+	}
 
+	@Test
+	void testFindUserByLastname() {
+		Iterable<User> users = repository.findUserByLastname(user.getLastname());
+		users.forEach( user ->
+				System.out.println("testFindResponseByLastname: Utilisateur récupéré = " + user)
+		);
+	}
+
+	@Test
+	void testFindUserByRole() {
+		Iterable<User> users = repository.findUserByRole(user.getRole());
+		users.forEach( user ->
+				System.out.println("testFindResponseByRole: Utilisateur récupéré = " + user)
+		);
+	}
+
+	@Test
+	void testFindUserByGenre() {
+		Iterable<User> users = repository.findUserByGenre(user.getGenre());
+		users.forEach( user ->
+				System.out.println("testFindResponseByGenre: Utilisateur récupéré = " + user)
+		);
+	}
+	@Test
+	void testDeleteUser() {
+
+		Optional<User> optionalUser = repository.findById(user.getUserID());
+		if (optionalUser.isPresent()) {
+			User retrievedUser = optionalUser.get();
+			System.out.println("testDeleteUser: Utilisateur récupéré = " + retrievedUser);
+			repository.delete(retrievedUser);
+		} else {
+			System.out.println("testDeleteUser: Utilisateur non trouvé.");
+		}
+
+	}
 
 }

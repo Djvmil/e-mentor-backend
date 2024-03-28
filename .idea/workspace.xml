@@ -5,9 +5,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9f3b0c49-c930-49af-bd9e-defc0c183504" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/java/org/djvmil/em/backend/core/reposority/UserRepositoryTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/org/djvmil/em/backend/core/reposority/InterviewRepositoryTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/org/djvmil/em/backend/core/reposority/QuestionRepositoryTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/org/djvmil/em/backend/core/reposority/ResponseRepositoryTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/djvmil/em/backend/core/entity/Interview.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/djvmil/em/backend/core/entity/Interview.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/djvmil/em/backend/core/entity/Question.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/djvmil/em/backend/core/entity/Question.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/djvmil/em/backend/core/entity/Response.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/djvmil/em/backend/core/entity/Response.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/djvmil/em/backend/core/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/djvmil/em/backend/core/entity/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/djvmil/em/backend/core/repository/IAuthRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/djvmil/em/backend/core/repository/IAuthRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/djvmil/em/backend/core/repository/IInterviewRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/djvmil/em/backend/core/repository/IInterviewRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/djvmil/em/backend/core/repository/IQuestionRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/djvmil/em/backend/core/repository/IQuestionRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/djvmil/em/backend/core/repository/IResponseRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/djvmil/em/backend/core/repository/IResponseRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/djvmil/em/backend/core/repository/file/AuthFileRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/djvmil/em/backend/core/repository/file/AuthFileRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/data.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/data.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/djvmil/em/backend/BackendApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/djvmil/em/backend/BackendApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/djvmil/em/backend/core/reposority/UserRepositoryTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/djvmil/em/backend/core/reposority/UserRepositoryTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,6 +66,9 @@
   "keyToString": {
     "Application.app.executor": "Run",
     "DefaultHtmlFileTemplate": "HTML File",
+    "JUnit.ResponseRepositoryTests.executor": "Run",
+    "JUnit.UserRepositoryTests.executor": "Run",
+    "JUnit.UserRepositoryTests.testCreate.executor": "Run",
     "JUnit.UserRepositoryTests.testCreateUser.executor": "Run",
     "Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor": "Run",
     "Maven.EntretienMentor-Backend [org.apache.maven.plugins:maven-clean-plugin:3.1.0:clean].executor": "Run",
@@ -61,7 +78,7 @@
     "git-widget-placeholder": "develop",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "/Users/moustaphas.dieme/Desktop/EntretienMentor/EntretienMentorBackend/src/main/resources",
-    "settings.editor.selected.configurable": "MavenSettings"
+    "settings.editor.selected.configurable": "preferences.pluginManager"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -74,10 +91,71 @@
       <recent name="org.djvmil.em.backend.core.reposority" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.UserRepositoryTests.testCreateUser">
+  <component name="RunManager" selected="JUnit.InterviewRepositoryTests">
     <configuration name="app" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="org.djvmil.em.backend.BackendApplication" />
       <module name="backend" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="InterviewRepositoryTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="backend" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.djvmil.em.backend.core.reposority.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.djvmil.em.backend.core.reposority" />
+      <option name="MAIN_CLASS_NAME" value="org.djvmil.em.backend.core.reposority.InterviewRepositoryTests" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ResponseRepositoryTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="backend" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.djvmil.em.backend.core.reposority.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.djvmil.em.backend.core.reposority" />
+      <option name="MAIN_CLASS_NAME" value="org.djvmil.em.backend.core.reposority.ResponseRepositoryTests" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserRepositoryTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="backend" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.djvmil.em.backend.core.reposority.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.djvmil.em.backend.core.reposority" />
+      <option name="MAIN_CLASS_NAME" value="org.djvmil.em.backend.core.reposority.UserRepositoryTests" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserRepositoryTests.testCreate" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="backend" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.djvmil.em.backend.core.reposority.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.djvmil.em.backend.core.reposority" />
+      <option name="MAIN_CLASS_NAME" value="org.djvmil.em.backend.core.reposority.UserRepositoryTests" />
+      <option name="METHOD_NAME" value="testCreate" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -100,6 +178,10 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.InterviewRepositoryTests" />
+        <item itemvalue="JUnit.UserRepositoryTests" />
+        <item itemvalue="JUnit.ResponseRepositoryTests" />
+        <item itemvalue="JUnit.UserRepositoryTests.testCreate" />
         <item itemvalue="JUnit.UserRepositoryTests.testCreateUser" />
       </list>
     </recent_temporary>
