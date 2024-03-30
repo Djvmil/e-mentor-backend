@@ -1,5 +1,6 @@
 package org.djvmil.em.backend.api;
 
+import org.djvmil.em.backend.core.dto.UserDto;
 import org.djvmil.em.backend.core.entity.User;
 import org.djvmil.em.backend.core.service.AuthService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,19 +15,19 @@ public class UserRessource {
     private AuthService service;
 
     @PostMapping
-    public User create(@RequestBody User user){
+    public UserDto create(@RequestBody UserDto userDto){
 
-        return service.register(user);
+        return service.register(userDto);
     }
 
     @GetMapping
-    public Iterable<User> getUsers(){
+    public Iterable<UserDto> getUsers(){
 
         return service.list();
     }
 
     @GetMapping("/{id}")
-    public User getUserById(@PathVariable("id") Long userId){
+    public UserDto getUserById(@PathVariable("id") Long userId){
 
         return service.getById(userId);
     }

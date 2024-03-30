@@ -1,6 +1,7 @@
 package org.djvmil.em.backend.controller;
 
 import jakarta.validation.Valid;
+import org.djvmil.em.backend.core.dto.QuestionDto;
 import org.djvmil.em.backend.core.entity.Question;
 import org.djvmil.em.backend.core.entity.User;
 import org.djvmil.em.backend.core.service.QuestionService;
@@ -20,7 +21,7 @@ public class QuestionController {
 
     @GetMapping
     public String  list(Model model){
-        Iterable<Question> questions = service.list();
+        Iterable<QuestionDto> questions = service.list();
         model.addAttribute("questions", questions);
 
         return "home";
@@ -29,7 +30,7 @@ public class QuestionController {
     @GetMapping("/{id}")
     public String findById(@PathVariable("id") Long questionId, Model model){
         System.out.println("Tentative d'affichage de home");
-        Question question = service.findById(questionId);
+        QuestionDto question = service.findById(questionId);
         model.addAttribute("question", question);
 
         return "user-detail";

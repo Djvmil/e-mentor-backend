@@ -2,6 +2,7 @@ package org.djvmil.em.backend;
 
 import com.fasterxml.jackson.datatype.hibernate6.Hibernate6Module;
 import org.djvmil.em.backend.core.entity.Response;
+import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -22,6 +23,12 @@ public class BackendApplication implements CommandLineRunner {
 	@Bean
 	public Hibernate6Module hibernate6Module() {
 		return new Hibernate6Module();
+	}
+
+
+	@Bean
+	public ModelMapper modelMapper() {
+		return new ModelMapper();
 	}
 
 	@Override

@@ -1,7 +1,6 @@
-package org.djvmil.em.backend.core.reposority;
+package org.djvmil.em.backend.core.repository;
 
 import org.djvmil.em.backend.core.entity.Question;
-import org.djvmil.em.backend.core.repository.IQuestionRepository;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,13 +1,15 @@
 package org.djvmil.em.backend.core.repository;
 
 import org.djvmil.em.backend.core.entity.User;
-import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 
+import java.util.List;
+
 @RepositoryRestResource(path = "rest")
-public interface IAuthRepository extends CrudRepository<User, Long> {
-    Iterable<User> findUserByFirstname(String firstname);
-    Iterable<User> findUserByLastname(String lastname);
-    Iterable<User> findUserByGenre(String genre);
-    Iterable<User> findUserByRole(String role);
+public interface IAuthRepository extends JpaRepository<User, Long> {
+    List<User> findUserByFirstname(String firstname);
+    List<User> findUserByLastname(String lastname);
+    List<User> findUserByGenre(String genre);
+    List<User> findUserByRole(String role);
 }

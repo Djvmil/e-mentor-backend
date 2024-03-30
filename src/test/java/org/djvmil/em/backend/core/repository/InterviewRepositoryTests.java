@@ -1,8 +1,8 @@
-package org.djvmil.em.backend.core.reposority;
+package org.djvmil.em.backend.core.repository;
 
 import org.djvmil.em.backend.core.entity.Interview;
-import org.djvmil.em.backend.core.repository.IInterviewRepository;
-import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -18,8 +18,8 @@ class InterviewRepositoryTests {
 
 	static Interview interview = null;
 
-	@BeforeAll
-	public static void init(){
+	@BeforeEach
+	public void init(){
 		interview = new Interview();
 		interview.setCompany("C1");
 		interview.setTitle("Title 1");
@@ -89,6 +89,7 @@ class InterviewRepositoryTests {
 	}
 
 	@Test
+	@AfterEach
 	void testDeleteInterview() {
 
 		Optional<Interview> optionalInterview = repository.findById(interview.getInterviewID());
