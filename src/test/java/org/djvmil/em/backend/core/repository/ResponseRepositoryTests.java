@@ -89,7 +89,7 @@ class ResponseRepositoryTests {
 
 	@Test
 	void testFindByInterviewId() {
-		Iterable<Response> responses = repository.findByInterviewId(response.getInterview().getInterviewID());
+		Iterable<Response> responses = repository.findByInterviewInterviewID(response.getInterview().getInterviewID());
 		responses.forEach( res ->
 				System.out.println("testFindByInterviewId: Response récupéré = " + res)
 		);
@@ -97,7 +97,7 @@ class ResponseRepositoryTests {
 
 	@Test
 	void testFindResponseByQuestionId() {
-		Iterable<Response> responses = repository.findResponseByQuestionId(response.getQuestion().getQuestionID());
+		Iterable<Response> responses = repository.findResponseByQuestionQuestionID(response.getQuestion().getQuestionID());
 		responses.forEach( res ->
 				System.out.println("findResponseByQuestionId: Response récupéré = " + res)
 		);
@@ -122,7 +122,7 @@ class ResponseRepositoryTests {
 
 	@Test
 	void testFindByUserId() {
-		Iterable<Response> responses = repository.findByUserId(response.getUser().getUserID());
+		Iterable<Response> responses = repository.findByUserUserID(response.getUser().getUserID());
 		responses.forEach( res ->
 				System.out.println("findByUserId: Response récupéré = " + res)
 		);

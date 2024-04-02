@@ -18,10 +18,10 @@ public interface IResponseRepository extends JpaRepository<Response, Long> {
     @EntityGraph(value = "response.join.tables", type = EntityGraph.EntityGraphType.FETCH)
     List<Response> findByUser(User user);
     @EntityGraph(value = "response.join.tables", type = EntityGraph.EntityGraphType.FETCH)
-    List<Response> findByUserId(Long userId);
+    List<Response> findByUserUserID(Long userId);
     @EntityGraph(value = "response.join.tables", type = EntityGraph.EntityGraphType.FETCH)
-    List<Response> findResponseByQuestionId(Long questionId);
+    List<Response> findResponseByQuestionQuestionID(Long questionId);
 
     @EntityGraph(value = "response.join.tables", type = EntityGraph.EntityGraphType.FETCH)
-    List<Response> findByInterviewId(Long interviewId);
+    List<Response> findByInterviewInterviewID(Long interviewId);
 }

@@ -4,10 +4,12 @@ import org.djvmil.em.backend.core.entity.Interview;
 import org.djvmil.em.backend.core.entity.Question;
 import org.springframework.data.repository.CrudRepository;
 
+import java.util.List;
+
 
 public interface IInterviewRepository extends CrudRepository<Interview, Long> {
-    Iterable<Interview> findResponseByTitle(String title);
-    Iterable<Interview> findResponseByDescription(String description);
-    Iterable<Interview> findResponseByDescriptionContains(String contains);
-    Iterable<Interview> findResponseByCompany(String company);
+    List<Interview> findResponseByTitle(String title);
+    List<Interview> findResponseByDescription(String description);
+    List<Interview> findResponseByDescriptionContains(String contains);
+    List<Interview> findResponseByCompany(String company);
 }
