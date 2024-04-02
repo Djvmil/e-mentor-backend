@@ -1,4 +1,4 @@
-package org.djvmil.em.backend.core.entity;
+package org.djvmil.em.backend.core.dto;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -7,23 +7,16 @@ import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
 
-@Entity
-@Table(name = "Interviews")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class Interview {
+public class InterviewDto {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long interviewID;
-
     private String title;
     private String description;
     private String requiredSkills;
     private String company;
-
-    @Column(name="datetime")
     private LocalDateTime dateTime;
 
 }

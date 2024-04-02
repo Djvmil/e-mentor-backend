@@ -1,6 +1,7 @@
 package org.djvmil.em.backend.api;
 
 import jakarta.validation.Valid;
+import org.djvmil.em.backend.core.dto.InterviewDto;
 import org.djvmil.em.backend.core.entity.Interview;
 import org.djvmil.em.backend.core.service.InterviewService;
 import org.djvmil.em.backend.form.InterviewForm;
@@ -8,24 +9,26 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
-@RequestMapping("/api/interview")
+@RequestMapping("/api/interviews")
+@CrossOrigin
 public class InterviewRessource {
 
     @Autowired
     private InterviewService service;
 
     @GetMapping
-    public Iterable<Interview> list(){
+    public List<InterviewDto> list(){
 
         return service.list();
     }
 
     @GetMapping("/{id}")
-    public Interview findById(@PathVariable("id") Long interviewId){
-        Interview interview = service.findById(interviewId);
+    public InterviewDto findById(@PathVariable("id") Long interviewId){
 
-        return interview;
+        return service.findById(interviewId);
     }
 
     @PostMapping

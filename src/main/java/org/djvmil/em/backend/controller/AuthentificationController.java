@@ -1,6 +1,7 @@
 package org.djvmil.em.backend.controller;
 
 import jakarta.validation.Valid;
+import org.djvmil.em.backend.core.dto.UserDto;
 import org.djvmil.em.backend.core.entity.User;
 import org.djvmil.em.backend.core.service.AuthService;
 import org.djvmil.em.backend.form.UserForm;
@@ -18,12 +19,12 @@ public class AuthentificationController {
     private AuthService service;
 
 
-    public User login(String login, String password){
+    public UserDto login(String login, String password){
 
         return service.login(login, password);
     }
 
-    public User register(User user){
+    public UserDto register(UserDto user){
 
         return service.register(user);
     }
@@ -31,7 +32,7 @@ public class AuthentificationController {
     @GetMapping
     public String  homePage(Model model){
         System.out.println("Tentative d'affichage de home");
-        Iterable<User> users = service.list();
+        Iterable<UserDto> users = service.list();
         model.addAttribute("usersAtr", users);
 
         return "home";
@@ -41,7 +42,7 @@ public class AuthentificationController {
     @GetMapping("/{id}")
     public String getUserById(@PathVariable("id") Long userId, Model model){
         System.out.println("Tentative d'affichage de home");
-        User user = service.getById(userId);
+        UserDto user = service.getById(userId);
         model.addAttribute("user", user);
 
         return "user-detail";
@@ -64,7 +65,7 @@ public class AuthentificationController {
         if (bindingResult.hasErrors())
             return "add-user";
 
-        User user = new User();
+        UserDto user = new UserDto();
         user.setUserID(123L);
         user.setFirstname(userAtt.getFirstname());
         user.setLastname(userAtt.getLastname());

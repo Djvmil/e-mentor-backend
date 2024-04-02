@@ -1,6 +1,7 @@
 package org.djvmil.em.backend.controller;
 
 import jakarta.validation.Valid;
+import org.djvmil.em.backend.core.dto.ResponseDto;
 import org.djvmil.em.backend.core.entity.Response;
 import org.djvmil.em.backend.core.service.AuthService;
 import org.djvmil.em.backend.core.service.InterviewService;
@@ -28,7 +29,7 @@ public class ResponseController {
 
     @GetMapping
     public String list(Model model){
-        Iterable<Response> responses = service.list();
+        Iterable<ResponseDto> responses = service.list();
         model.addAttribute("responses", responses);
 
         return "home";
@@ -37,7 +38,7 @@ public class ResponseController {
     //@RequestMapping("/{id}")
     @GetMapping("/{id}")
     public String findById(@PathVariable("id") Long responseId, Model model){
-        Response response = service.findById(responseId);
+        ResponseDto response = service.findById(responseId);
         model.addAttribute("response", response);
 
         return "user-detail";
@@ -55,7 +56,7 @@ public class ResponseController {
         if (bindingResult.hasErrors())
             return "add-user";
 
-        Response response = new Response();
+        ResponseDto response = new ResponseDto();
 
 
         response.setResponseID(123L);

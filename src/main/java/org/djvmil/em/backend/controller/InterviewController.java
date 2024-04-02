@@ -1,6 +1,10 @@
 package org.djvmil.em.backend.controller;
 
 import jakarta.validation.Valid;
+import org.djvmil.em.backend.core.dto.InterviewDto;
+import org.djvmil.em.backend.core.dto.QuestionDto;
+import org.djvmil.em.backend.core.dto.ResponseDto;
+import org.djvmil.em.backend.core.dto.UserDto;
 import org.djvmil.em.backend.core.entity.Interview;
 import org.djvmil.em.backend.core.entity.Question;
 import org.djvmil.em.backend.core.entity.Response;
@@ -32,7 +36,7 @@ public class InterviewController {
 
     @GetMapping("/{id}")
     public String findById(@PathVariable("id") Long interviewId, Model model){
-        Interview interview = service.findById(interviewId);
+        InterviewDto interview = service.findById(interviewId);
         model.addAttribute("interview", interview);
 
         return "user-detail";
@@ -50,33 +54,33 @@ public class InterviewController {
         if (bindingResult.hasErrors())
             return "create-interview";
 
-        Response response = new Response();
+        ResponseDto responseDto = new ResponseDto();
 
-        User user = new User();
-        user.setFirstname(interviewForm.getFirstname());
-        user.setLastname(interviewForm.getLastname());
-        user.setGenre(interviewForm.getGenre());
-        user.setEmail(interviewForm.getEmail());
+        UserDto userDto = new UserDto();
+        userDto.setFirstname(interviewForm.getFirstname());
+        userDto.setLastname(interviewForm.getLastname());
+        userDto.setGenre(interviewForm.getGenre());
+        userDto.setEmail(interviewForm.getEmail());
 
-        response.setUser(user);
+        responseDto.setUser(userDto);
 
-        Question question = new Question();
+        QuestionDto question = new QuestionDto();
         question.setQuestionText(interviewForm.getQuestionText());
         question.setQuestionType(interviewForm.getQuestionType());
 
-        response.setQuestion(question);
+        responseDto.setQuestion(question);
 
-        Interview interview = new Interview();
-        interview.setCompany(interviewForm.getCompany());
-        interview.setDescription(interviewForm.getDescription());
-        interview.setTitle(interviewForm.getTitle());
-        interview.setRequiredSkills(interviewForm.getRequiredSkills());
-        response.setInterview(interview);
+        InterviewDto interviewDto = new InterviewDto();
+        interviewDto.setCompany(interviewForm.getCompany());
+        interviewDto.setDescription(interviewForm.getDescription());
+        interviewDto.setTitle(interviewForm.getTitle());
+        interviewDto.setRequiredSkills(interviewForm.getRequiredSkills());
+        responseDto.setInterview(interviewDto);
 
-        response.setResponseText(interviewForm.getResponseText());
-        response.setScore(interviewForm.getScore());
+        responseDto.setResponseText(interviewForm.getResponseText());
+        responseDto.setScore(interviewForm.getScore());
 
-        responseService.save(response);
+        responseService.save(responseDto);
 
         return "interview-page";
     }
