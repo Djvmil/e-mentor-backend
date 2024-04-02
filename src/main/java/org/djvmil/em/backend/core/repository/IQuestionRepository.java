@@ -5,9 +5,11 @@ import org.djvmil.em.backend.core.entity.Response;
 import org.springframework.data.jpa.repository.EntityGraph;
 import org.springframework.data.repository.CrudRepository;
 
+import java.util.List;
+
 public interface IQuestionRepository extends CrudRepository<Question, Long> {
-    Iterable<Question> findResponseByQuestionText(String questionText);
-    Iterable<Question> findResponseByQuestionTextContains(String contains);
-    Iterable<Question> findResponseByQuestionType(String questionType);
-    Iterable<Question> findOrderByQuestionTypeASC(String questionType);
+    List<Question> findResponseByQuestionText(String questionText);
+    List<Question> findResponseByQuestionTextContains(String contains);
+    List<Question> findResponseByQuestionType(String questionType);
+    List<Question> findOrderByQuestionType(String questionType);
 }
