@@ -39,7 +39,6 @@ class ResponseRepositoryTests {
 		interview.setCompany("C1");
 		interview.setTitle("Title 1");
 		interview.setDescription("Description 1");
-		interview.setDateTime(LocalDateTime.now());
 		interview.setRequiredSkills("Skill 1");
 
 		Question question = new Question();

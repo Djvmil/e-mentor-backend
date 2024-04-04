@@ -6,15 +6,13 @@ import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
 
-@Data
-@NoArgsConstructor
-@AllArgsConstructor
-public class QuestionDto {
+@Data @NoArgsConstructor @AllArgsConstructor
+public class BlogQuestionDto {
     private Long questionID;
 
+    private BlogDto blogDto;
+    private UserDto userDto;
     private String questionText;
-    private String questionType;
     private LocalDateTime dateCreated;
     private LocalDateTime dateUpdated;
-
 }

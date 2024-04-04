@@ -12,7 +12,7 @@ import java.util.Optional;
 class UserRepositoryTests {
 
 	@Autowired
-	IAuthRepository repository;
+    IUserRepository repository;
 
 	static User user = null;
 
@@ -70,14 +70,6 @@ class UserRepositoryTests {
 		Iterable<User> users = repository.findUserByLastname(user.getLastname());
 		users.forEach( user ->
 				System.out.println("testFindResponseByLastname: Utilisateur récupéré = " + user)
-		);
-	}
-
-	@Test
-	void testFindUserByRole() {
-		Iterable<User> users = repository.findUserByRole(user.getRole());
-		users.forEach( user ->
-				System.out.println("testFindResponseByRole: Utilisateur récupéré = " + user)
 		);
 	}
 

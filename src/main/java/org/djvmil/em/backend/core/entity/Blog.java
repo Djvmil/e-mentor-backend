@@ -6,18 +6,21 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
-import java.util.Date;
 
 @Entity
-@Table(name = "questions")
+@Table(name = "blogs")
 @Data @NoArgsConstructor @AllArgsConstructor
-public class Question {
-
+public class Blog {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long questionID;
-    private String questionText;
-    private String questionType;
+    private Long blogID;
+
+    @ManyToOne
+    @JoinColumn(name = "userID")
+    private User user;
+
+    private String title;
+    private String content;
     private LocalDateTime dateCreated = LocalDateTime.now();
     private LocalDateTime dateUpdated = LocalDateTime.now();
 

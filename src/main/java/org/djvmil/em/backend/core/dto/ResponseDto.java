@@ -1,22 +1,22 @@
 package org.djvmil.em.backend.core.dto;
 
-import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.djvmil.em.backend.core.entity.Interview;
-import org.djvmil.em.backend.core.entity.Question;
-import org.djvmil.em.backend.core.entity.User;
+
+import java.time.LocalDateTime;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 public class ResponseDto {
     private Long responseID;
-    private UserDto user;
-    private InterviewDto interview;
-    private QuestionDto question;
+    private UserDto userDto;
+    private InterviewDto interviewDto;
+    private QuestionDto questionDto;
     private String responseText;
     private Long score;
+    private LocalDateTime dateCreated;
+    private LocalDateTime dateUpdated;
 
 }

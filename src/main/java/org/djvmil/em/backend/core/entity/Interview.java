@@ -6,24 +6,21 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
+import java.util.Date;
 
 @Entity
-@Table(name = "Interviews")
-@Data
-@NoArgsConstructor
-@AllArgsConstructor
+@Table(name = "interviews")
+@Data @NoArgsConstructor @AllArgsConstructor
 public class Interview {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long interviewID;
-
     private String title;
     private String description;
     private String requiredSkills;
     private String company;
-
-    @Column(name="datetime")
-    private LocalDateTime dateTime;
+    private LocalDateTime dateCreated = LocalDateTime.now();
+    private LocalDateTime dateUpdated = LocalDateTime.now();
 
 }

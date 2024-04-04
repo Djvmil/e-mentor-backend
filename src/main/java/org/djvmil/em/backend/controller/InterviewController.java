@@ -62,20 +62,20 @@ public class InterviewController {
         userDto.setGenre(interviewForm.getGenre());
         userDto.setEmail(interviewForm.getEmail());
 
-        responseDto.setUser(userDto);
+        responseDto.setUserDto(userDto);
 
         QuestionDto question = new QuestionDto();
         question.setQuestionText(interviewForm.getQuestionText());
         question.setQuestionType(interviewForm.getQuestionType());
 
-        responseDto.setQuestion(question);
+        responseDto.setQuestionDto(question);
 
         InterviewDto interviewDto = new InterviewDto();
         interviewDto.setCompany(interviewForm.getCompany());
         interviewDto.setDescription(interviewForm.getDescription());
         interviewDto.setTitle(interviewForm.getTitle());
         interviewDto.setRequiredSkills(interviewForm.getRequiredSkills());
-        responseDto.setInterview(interviewDto);
+        responseDto.setInterviewDto(interviewDto);
 
         responseDto.setResponseText(interviewForm.getResponseText());
         responseDto.setScore(interviewForm.getScore());

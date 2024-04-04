@@ -1,8 +1,7 @@
 package org.djvmil.em.backend.api;
 
 import org.djvmil.em.backend.core.dto.UserDto;
-import org.djvmil.em.backend.core.entity.User;
-import org.djvmil.em.backend.core.service.AuthService;
+import org.djvmil.em.backend.core.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -12,18 +11,18 @@ import org.springframework.web.bind.annotation.*;
 public class UserRessource {
 
     @Autowired // like @Inject or @Ressource in JEE
-    private AuthService service;
+    private UserService service;
 
     @PostMapping
     public UserDto create(@RequestBody UserDto userDto){
 
-        return service.register(userDto);
+        return service.create(userDto);
     }
 
     @GetMapping
     public Iterable<UserDto> getUsers(){
 
-        return service.list();
+        return service.allUsers();
     }
 
     @GetMapping("/{id}")

@@ -5,13 +5,65 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9f3b0c49-c930-49af-bd9e-defc0c183504" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/djvmil/em/backend/core/dto/BlogDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/djvmil/em/backend/core/dto/BlogQuestionDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/djvmil/em/backend/core/dto/BlogResponseDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/djvmil/em/backend/core/dto/CommunityDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/djvmil/em/backend/core/dto/CommunityMembershipDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/djvmil/em/backend/core/dto/CommunityQuestionDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/djvmil/em/backend/core/dto/CommunityResponseDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/djvmil/em/backend/core/dto/RoleDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/djvmil/em/backend/core/dto/TipCategories.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/djvmil/em/backend/core/dto/TipDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/djvmil/em/backend/core/entity/Blog.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/djvmil/em/backend/core/entity/BlogQuestion.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/djvmil/em/backend/core/entity/BlogResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/djvmil/em/backend/core/entity/Community.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/djvmil/em/backend/core/entity/CommunityMembership.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/djvmil/em/backend/core/entity/CommunityQuestion.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/djvmil/em/backend/core/entity/CommunityResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/djvmil/em/backend/core/entity/Role.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/djvmil/em/backend/core/entity/Tip.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/djvmil/em/backend/core/entity/TipCategory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/djvmil/em/backend/core/repository/IBlogQuestionRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/djvmil/em/backend/core/repository/IBlogRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/djvmil/em/backend/core/repository/IBlogResponseRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/djvmil/em/backend/core/repository/ICommunityMemberShipRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/djvmil/em/backend/core/repository/ICommunityQuestionRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/djvmil/em/backend/core/repository/ICommunityRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/djvmil/em/backend/core/repository/ICommunityResponseRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/djvmil/em/backend/core/repository/IRoleRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/djvmil/em/backend/core/repository/ITipCategoryRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/djvmil/em/backend/core/repository/ITipRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/djvmil/em/backend/security/EMUserDetailsService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/djvmil/em/backend/security/JWTAuthenticationFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/djvmil/em/backend/security/SecurityBeansConfiguration.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/djvmil/em/backend/security/SecurityConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/djvmil/em/backend/BackendApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/djvmil/em/backend/BackendApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/djvmil/em/backend/core/repository/IInterviewRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/djvmil/em/backend/core/repository/IInterviewRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/djvmil/em/backend/core/repository/IQuestionRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/djvmil/em/backend/core/repository/IQuestionRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/djvmil/em/backend/core/repository/IResponseRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/djvmil/em/backend/core/repository/IResponseRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/djvmil/em/backend/api/InterviewRessource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/djvmil/em/backend/api/InterviewRessource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/djvmil/em/backend/api/UserRessource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/djvmil/em/backend/api/UserRessource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/djvmil/em/backend/controller/AuthentificationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/djvmil/em/backend/controller/AuthentificationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/djvmil/em/backend/controller/InterviewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/djvmil/em/backend/controller/InterviewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/djvmil/em/backend/controller/ResponseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/djvmil/em/backend/controller/ResponseController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/djvmil/em/backend/core/dto/InterviewDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/djvmil/em/backend/core/dto/InterviewDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/djvmil/em/backend/core/dto/QuestionDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/djvmil/em/backend/core/dto/QuestionDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/djvmil/em/backend/core/dto/ResponseDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/djvmil/em/backend/core/dto/ResponseDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/djvmil/em/backend/core/dto/UserDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/djvmil/em/backend/core/dto/UserDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/djvmil/em/backend/core/entity/Interview.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/djvmil/em/backend/core/entity/Interview.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/djvmil/em/backend/core/entity/Question.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/djvmil/em/backend/core/entity/Question.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/djvmil/em/backend/core/entity/Response.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/djvmil/em/backend/core/entity/Response.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/djvmil/em/backend/core/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/djvmil/em/backend/core/entity/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/djvmil/em/backend/core/repository/IAuthRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/djvmil/em/backend/core/repository/IUserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/djvmil/em/backend/core/repository/file/AuthFileRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/djvmil/em/backend/core/repository/file/AuthFileRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/djvmil/em/backend/core/service/AuthService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/djvmil/em/backend/core/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/djvmil/em/backend/core/service/QuestionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/djvmil/em/backend/core/service/QuestionService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/schema.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/schema.sql.old" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/djvmil/em/backend/core/repository/InterviewRepositoryTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/djvmil/em/backend/core/repository/InterviewRepositoryTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/org/djvmil/em/backend/core/repository/ResponseRepositoryTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/djvmil/em/backend/core/repository/ResponseRepositoryTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/djvmil/em/backend/core/repository/UserRepositoryTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/djvmil/em/backend/core/repository/UserRepositoryTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,8 +76,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="HTML File" />
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -64,26 +116,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.app.executor": "Run",
-    "DefaultHtmlFileTemplate": "HTML File",
-    "JUnit.InterviewRepositoryTests.executor": "Run",
-    "JUnit.ResponseRepositoryTests.executor": "Run",
-    "JUnit.UserRepositoryTests.executor": "Run",
-    "JUnit.UserRepositoryTests.testCreate.executor": "Run",
-    "JUnit.UserRepositoryTests.testCreateUser.executor": "Run",
-    "Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor": "Run",
-    "Maven.EntretienMentor-Backend [org.apache.maven.plugins:maven-clean-plugin:3.1.0:clean].executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "Merging develop",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/Users/moustaphas.dieme/Desktop/EntretienMentor/EntretienMentorBackend/src/main/resources",
-    "settings.editor.selected.configurable": "preferences.pluginManager"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.app.executor&quot;: &quot;Run&quot;,
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;JUnit.InterviewRepositoryTests.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ResponseRepositoryTests.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.UserRepositoryTests.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.UserRepositoryTests.testCreate.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.UserRepositoryTests.testCreateUser.executor&quot;: &quot;Run&quot;,
+    &quot;Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.EntretienMentor-Backend [org.apache.maven.plugins:maven-clean-plugin:3.1.0:clean].executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;develop&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/moustaphas.dieme/Desktop/EntretienMentor/EntretienMentorBackend/src/main/resources&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/resources" />
@@ -91,6 +143,7 @@
       <recent name="$PROJECT_DIR$/src/main/resources/templates" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="org.djvmil.em.backend.core.repository" />
       <recent name="org.djvmil.em.backend.core.dto" />
       <recent name="org.djvmil.em.backend.core.reposority" />
     </key>

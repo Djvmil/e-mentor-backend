@@ -2,8 +2,7 @@ package org.djvmil.em.backend.controller;
 
 import jakarta.validation.Valid;
 import org.djvmil.em.backend.core.dto.UserDto;
-import org.djvmil.em.backend.core.entity.User;
-import org.djvmil.em.backend.core.service.AuthService;
+import org.djvmil.em.backend.core.service.UserService;
 import org.djvmil.em.backend.form.UserForm;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -16,7 +15,7 @@ import org.springframework.web.bind.annotation.*;
 public class AuthentificationController {
 
     @Autowired // like @Inject or @Ressource in JEE
-    private AuthService service;
+    private UserService service;
 
 
     public UserDto login(String login, String password){
@@ -26,13 +25,13 @@ public class AuthentificationController {
 
     public UserDto register(UserDto user){
 
-        return service.register(user);
+        return service.create(user);
     }
 
     @GetMapping
     public String  homePage(Model model){
         System.out.println("Tentative d'affichage de home");
-        Iterable<UserDto> users = service.list();
+        Iterable<UserDto> users = service.allUsers();
         model.addAttribute("usersAtr", users);
 
         return "home";
@@ -73,7 +72,7 @@ public class AuthentificationController {
 
         model.addAttribute("user", userAtt);
 
-        service.register(user);
+        service.create(user);
 
         return "result-add-user";
     }

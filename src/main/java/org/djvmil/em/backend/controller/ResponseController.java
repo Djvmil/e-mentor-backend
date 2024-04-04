@@ -2,8 +2,7 @@ package org.djvmil.em.backend.controller;
 
 import jakarta.validation.Valid;
 import org.djvmil.em.backend.core.dto.ResponseDto;
-import org.djvmil.em.backend.core.entity.Response;
-import org.djvmil.em.backend.core.service.AuthService;
+import org.djvmil.em.backend.core.service.UserService;
 import org.djvmil.em.backend.core.service.InterviewService;
 import org.djvmil.em.backend.core.service.QuestionService;
 import org.djvmil.em.backend.core.service.ResponseService;
@@ -25,7 +24,7 @@ public class ResponseController {
     @Autowired
     private InterviewService interviewService;
     @Autowired
-    private AuthService authService;
+    private UserService userService;
 
     @GetMapping
     public String list(Model model){

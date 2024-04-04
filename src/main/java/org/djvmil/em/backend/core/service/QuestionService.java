@@ -12,7 +12,6 @@ import java.util.stream.Collectors;
 import java.util.stream.StreamSupport;
 
 @Service
-//@Component
 public class QuestionService {
     @Autowired
     private IQuestionRepository repository;

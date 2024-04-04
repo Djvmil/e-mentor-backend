@@ -6,14 +6,11 @@ import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
 
-@Data
-@NoArgsConstructor
-@AllArgsConstructor
-public class QuestionDto {
-    private Long questionID;
-
-    private String questionText;
-    private String questionType;
+@Data @NoArgsConstructor @AllArgsConstructor
+public class CommunityMembershipDto {
+    private Long id;
+    private UserDto userDto;
+    private CommunityDto communityDto;
     private LocalDateTime dateCreated;
     private LocalDateTime dateUpdated;
 

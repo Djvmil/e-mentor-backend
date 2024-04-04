@@ -24,7 +24,6 @@ class InterviewRepositoryTests {
 		interview.setCompany("C1");
 		interview.setTitle("Title 1");
 		interview.setDescription("Description 1");
-		interview.setDateTime(LocalDateTime.now());
 		interview.setRequiredSkills("Skill 1");
 
 	}

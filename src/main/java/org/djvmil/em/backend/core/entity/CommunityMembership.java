@@ -6,18 +6,23 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
-import java.util.Date;
 
 @Entity
-@Table(name = "questions")
+@Table(name = "communityMemberships")
 @Data @NoArgsConstructor @AllArgsConstructor
-public class Question {
+public class CommunityMembership {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long questionID;
-    private String questionText;
-    private String questionType;
+    private Long id;
+
+    @ManyToOne
+    @JoinColumn(name = "userID")
+    private User user;
+
+    @ManyToOne
+    @JoinColumn(name = "communityID")
+    private Community community;
     private LocalDateTime dateCreated = LocalDateTime.now();
     private LocalDateTime dateUpdated = LocalDateTime.now();
 

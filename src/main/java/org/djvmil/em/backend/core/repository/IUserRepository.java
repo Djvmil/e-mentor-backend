@@ -7,9 +7,9 @@ import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 import java.util.List;
 
 @RepositoryRestResource(path = "rest")
-public interface IAuthRepository extends JpaRepository<User, Long> {
+public interface IUserRepository extends JpaRepository<User, Long> {
     List<User> findUserByFirstname(String firstname);
     List<User> findUserByLastname(String lastname);
     List<User> findUserByGenre(String genre);
-    List<User> findUserByRole(String role);
+    User findByUsername(String username);
 }
