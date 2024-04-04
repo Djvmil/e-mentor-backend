@@ -30,8 +30,7 @@ public class SecurityConfig {
                 )
                 .addFilterBefore(
                         new JWTAuthenticationFilter(authenticationManager),
-                        UsernamePasswordAuthenticationFilter.class
-                );
+                        UsernamePasswordAuthenticationFilter.class);
 
         return httpSecurity.build();
     }
