@@ -34,19 +34,15 @@ public class JWTAuthenticationFilter extends UsernamePasswordAuthenticationFilte
     @Override
     public Authentication attemptAuthentication(HttpServletRequest request, HttpServletResponse response) throws AuthenticationException {
         UserDto userDto;
-        System.out.println("except 7 ------"+ authenticationManager.hashCode());
         try {
             userDto = new ObjectMapper().readValue(request.getInputStream(), UserDto.class);
 
 
-            System.out.println("except 7:"+ userDto.toString());
         } catch (JsonParseException | JsonMappingException e) {
             throw new RuntimeException(e);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-
-        System.out.println("except 11 --- ");
 
         return authenticationManager
                 .authenticate(new UsernamePasswordAuthenticationToken(userDto.getUsername(), userDto.getPassword()));
@@ -57,15 +53,12 @@ public class JWTAuthenticationFilter extends UsernamePasswordAuthenticationFilte
                                             HttpServletResponse response,
                                             FilterChain chain, Authentication authResult) throws IOException, ServletException {
 
-        System.out.println("except 2");
         User user = (User) authResult.getPrincipal();
 
         List<String> roles = new ArrayList<>();
 
         user.getAuthorities().forEach(auth -> roles.add(auth.getAuthority()));
 
-
-        System.out.println("except 3");
         String jwt = JWT.create()
                 .withSubject(user.getUsername())
                 .withArrayClaim("roles", roles.toArray(new String[roles.size()]))
