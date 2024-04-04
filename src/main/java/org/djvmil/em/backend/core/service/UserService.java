@@ -32,7 +32,7 @@ public class UserService {
 
     public UserDto login(String login, String password){
 
-        return modelMapper.map(repository.findById(1L).orElseThrow(), UserDto.class);
+        return modelMapper.map(repository.findByUsername(login), UserDto.class);
     }
 
     public UserDto create(UserDto userDto){

@@ -42,7 +42,7 @@ public class BackendApplication{ //implements CommandLineRunner {
 	//	restConfiguration.exposeIdsFor(User.class);
 	//}
 
-	@PostConstruct
+	/*@PostConstruct
 	public void initUserAndRole(){
 		//ajouter les rôles
 		userService.addRole(new RoleDto(null,"ADMIN"));
@@ -74,6 +74,6 @@ public class BackendApplication{ //implements CommandLineRunner {
 		userService.addRoleToUser(userAdmin.getUsername(), "ADMIN");
 		userService.addRoleToUser(userAdmin.getUsername(), "USER");
 		userService.addRoleToUser(userSimple.getUsername(), "USER");
-	}
+	}*/
 
 }

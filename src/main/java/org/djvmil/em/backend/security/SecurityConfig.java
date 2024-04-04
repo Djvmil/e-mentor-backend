@@ -21,17 +21,20 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity httpSecurity) throws Exception{
 
-        httpSecurity.sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
-                .csrf(AbstractHttpConfigurer::disable)//.csrf(csrf -> csrf.disable());
-                //.authorizeHttpRequests(requests -> requests.requestMatchers("/login", "register").permitAll())
-                .authorizeHttpRequests( requests ->
-                        requests.requestMatchers("/login").permitAll()
-                                .anyRequest().authenticated()
-                )
-                .addFilterBefore(
-                        new JWTAuthenticationFilter(authenticationManager),
-                        UsernamePasswordAuthenticationFilter.class);
+        System.out.println("except 13");
+        httpSecurity.sessionManagement(session ->
+                        session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
+                        .csrf(AbstractHttpConfigurer::disable)
+                        //.csrf(csrf -> csrf.disable())
+                        //.authorizeHttpRequests(requests -> requests.requestMatchers("/login", "register").permitAll())
+                        .authorizeHttpRequests( requests ->
+                                requests.requestMatchers("/login").permitAll()
+                                        .anyRequest().authenticated()
+                        )
+                        .addFilterBefore(new JWTAuthenticationFilter (authenticationManager),
+                            UsernamePasswordAuthenticationFilter.class);
 
+        System.out.println("except 14 ");
         return httpSecurity.build();
     }
 
