@@ -2,12 +2,13 @@ package org.djvmil.em.backend.config;
 
 import jakarta.servlet.http.HttpServletResponse;
 import org.djvmil.em.backend.security.EMUserDetailsService;
-import org.djvmil.em.backend.security.test.JWTFilter;
+import org.djvmil.em.backend.security.JWTFilter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
+import org.springframework.security.config.Customizer;
 import org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration;
 import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -22,13 +23,13 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 @EnableWebSecurity
 @EnableMethodSecurity
 public class SecurityConfig {
-	
+
 	@Autowired
 	private JWTFilter jwtFilter;
-	
+
 	@Autowired
 	private EMUserDetailsService userDetailsServiceImpl;
-	
+
 	@Bean
 	public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
 
@@ -36,11 +37,10 @@ public class SecurityConfig {
 						session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
 				.csrf(AbstractHttpConfigurer::disable)
 				.authorizeHttpRequests( requests ->
-						requests.requestMatchers("/login").permitAll()
-								.requestMatchers(AppConstants.PUBLIC_URLS).permitAll()
+						requests.requestMatchers(AppConstants.PUBLIC_URLS).permitAll()
+								.requestMatchers(AppConstants.USER_URLS).hasAnyAuthority("USER", "ADMIN")
+								.requestMatchers(AppConstants.ADMIN_URLS).hasAuthority("ADMIN")
 								.anyRequest().authenticated()
-								//.requestMatchers(AppConstants.USER_URLS).hasAnyAuthority("USER", "ADMIN")
-								//.requestMatchers(AppConstants.ADMIN_URLS).hasAuthority("ADMIN")
 				)
 				.addFilterBefore(jwtFilter, UsernamePasswordAuthenticationFilter.class)
 				.exceptionHandling(handling -> handling.authenticationEntryPoint(
@@ -54,10 +54,10 @@ public class SecurityConfig {
 	@Bean
 	public DaoAuthenticationProvider daoAuthenticationProvider() {
 		DaoAuthenticationProvider provider = new DaoAuthenticationProvider();
-		
+
 		provider.setUserDetailsService(userDetailsServiceImpl);
 		provider.setPasswordEncoder(passwordEncoder());
-		
+
 		return provider;
 	}
 

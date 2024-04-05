@@ -1,11 +1,15 @@
 package org.djvmil.em.backend.payloads;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.djvmil.em.backend.core.dto.UserDto;
 
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class JWTAuthResponse {
-	private String token;
+	private String accesToken;
 	
 	private UserDto user;
 }

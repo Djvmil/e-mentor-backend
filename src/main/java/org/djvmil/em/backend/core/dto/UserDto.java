@@ -1,5 +1,6 @@
 package org.djvmil.em.backend.core.dto;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -22,11 +23,14 @@ public class UserDto {
     private String phoneNumber;
     private String email;
     private String birthDate;
+
+    @JsonIgnore
     private String password;
     private Boolean isEmailVerified;
     private Boolean isPhoneNumbeVerified;
+
+    @JsonIgnore
     private Boolean enabled;
-    private String username;
     private Date dateCreated;
     private Date dateUpdated;
 

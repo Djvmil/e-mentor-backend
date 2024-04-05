@@ -5,14 +5,17 @@ package org.djvmil.em.backend.api;
 import org.djvmil.em.backend.core.dto.UserDto;
 import org.djvmil.em.backend.core.service.UserService;
 import org.djvmil.em.backend.exceptions.UserNotFoundException;
+import org.djvmil.em.backend.payloads.JWTAuthResponse;
 import org.djvmil.em.backend.payloads.LoginCredentials;
-import org.djvmil.em.backend.security.test.JWTUtil;
+import org.djvmil.em.backend.security.JWTUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -38,7 +41,7 @@ public class AuthRessource {
     private AuthenticationManager authenticationManager;
 
     @Autowired
-    private BCryptPasswordEncoder passwordEncoder;
+    private PasswordEncoder passwordEncoder;
 
     @PostMapping("/register")
     public ResponseEntity<Map<String, Object>> registerHandler(@Valid @RequestBody UserDto user) throws UserNotFoundException {
@@ -56,21 +59,19 @@ public class AuthRessource {
     }
 
     @PostMapping("/login")
-    public Map<String, Object> loginHandler(@Valid @RequestBody LoginCredentials credentials) {
-
-        System.out.println("LoginCredentials: "+credentials.toString());
+    public JWTAuthResponse loginHandler(@Valid @RequestBody LoginCredentials credentials) {
 
         UsernamePasswordAuthenticationToken authCredentials = new UsernamePasswordAuthenticationToken(
                 credentials.getEmail(), credentials.getPassword());
 
-        System.out.println("LoginCredentials 1: "+credentials.toString());
         authenticationManager.authenticate(authCredentials);
-
-        System.out.println("LoginCredentials 2: "+credentials.toString());
         String token = jwtUtil.generateToken(credentials.getEmail());
-        System.out.println("LoginCredentials 3: "+credentials.toString());
-        System.out.println("LoginCredentials 4: "+token);
 
-        return Collections.singletonMap("jwt-token", token);
+        UserDto userDto = userService.getByEmail(credentials.getEmail());
+
+        return new JWTAuthResponse(
+                token,
+                userDto
+        );
     }
 }

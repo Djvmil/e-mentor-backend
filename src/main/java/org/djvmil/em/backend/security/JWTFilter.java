@@ -1,4 +1,4 @@
-package org.djvmil.em.backend.security.test;
+package org.djvmil.em.backend.security;
 
 import com.auth0.jwt.exceptions.JWTVerificationException;
 import jakarta.servlet.FilterChain;

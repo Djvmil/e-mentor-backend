@@ -1,4 +1,4 @@
-package org.djvmil.em.backend.security.test;
+package org.djvmil.em.backend.security;
 
 import java.util.Date;
 
