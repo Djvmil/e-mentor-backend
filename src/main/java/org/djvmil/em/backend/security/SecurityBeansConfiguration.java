@@ -1,5 +1,5 @@
 package org.djvmil.em.backend.security;
-
+/*
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
@@ -23,3 +23,4 @@ public class SecurityBeansConfiguration {
         return config.getAuthenticationManager();
     }
 }
+*/

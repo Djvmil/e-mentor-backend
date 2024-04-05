@@ -1,5 +1,5 @@
 package org.djvmil.em.backend.security;
-
+/*
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.djvmil.em.backend.core.dto.UserDto;
 import java.io.IOException;
@@ -74,3 +74,4 @@ public class JWTAuthenticationFilter extends UsernamePasswordAuthenticationFilte
 
 
 }
+*/

@@ -37,6 +37,11 @@ public class AuthFileRepository implements IUserRepository {
     }
 
     @Override
+    public User getByEmail(String email) {
+        return null;
+    }
+
+    @Override
     public void flush() {
 
     }

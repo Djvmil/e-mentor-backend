@@ -1,5 +1,6 @@
 package org.djvmil.em.backend.api;
 
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import jakarta.validation.Valid;
 import org.djvmil.em.backend.core.dto.InterviewDto;
 import org.djvmil.em.backend.core.entity.Interview;
@@ -14,6 +15,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/interviews")
 @CrossOrigin("*")
+@SecurityRequirement(name = "E-Mentor Application")
 public class InterviewRessource {
 
     @Autowired

@@ -1,5 +1,6 @@
 package org.djvmil.em.backend.api;
 
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import org.djvmil.em.backend.core.dto.QuestionDto;
 import org.djvmil.em.backend.core.entity.Question;
 import org.djvmil.em.backend.core.service.QuestionService;
@@ -9,9 +10,10 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@CrossOrigin
 @RestController
 @RequestMapping("/api/questions")
-@CrossOrigin
+@SecurityRequirement(name = "E-Mentor Application")
 public class QuestionRessource {
 
     @Autowired

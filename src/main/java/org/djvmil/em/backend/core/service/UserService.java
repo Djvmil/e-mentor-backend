@@ -57,6 +57,10 @@ public class UserService {
         return modelMapper.map(repository.findByUsername(username), UserDto.class);
     }
 
+    public UserDto getByEmail(String email) {
+        return modelMapper.map(repository.getByEmail(email), UserDto.class);
+    }
+
     public RoleDto addRole(RoleDto roleDto) {
         Role role =  roleRepository.save(modelMapper.map(roleDto, Role.class));
 
