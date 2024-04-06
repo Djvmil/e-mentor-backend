@@ -4,7 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9f3b0c49-c930-49af-bd9e-defc0c183504" name="Changes" comment="" />
+    <list default="true" id="9f3b0c49-c930-49af-bd9e-defc0c183504" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/djvmil/em/backend/security/JWTFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/djvmil/em/backend/security/JWTFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/djvmil/em/backend/security/JWTUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/djvmil/em/backend/security/JWTUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/djvmil/em/backend/security/JwtAuthFilter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/djvmil/em/backend/security/old/EMUserDetailsServiceOld.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/djvmil/em/backend/security/EMUserDetailsService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/djvmil/em/backend/security/old/SecurityConfigOld.java" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -23,6 +30,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="prepare" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RESET_MODE" value="HARD" />
   </component>
@@ -65,26 +77,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.app.executor": "Run",
-    "DefaultHtmlFileTemplate": "HTML File",
-    "JUnit.InterviewRepositoryTests.executor": "Run",
-    "JUnit.ResponseRepositoryTests.executor": "Run",
-    "JUnit.UserRepositoryTests.executor": "Run",
-    "JUnit.UserRepositoryTests.testCreate.executor": "Run",
-    "JUnit.UserRepositoryTests.testCreateUser.executor": "Run",
-    "Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor": "Run",
-    "Maven.EntretienMentor-Backend [org.apache.maven.plugins:maven-clean-plugin:3.1.0:clean].executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "develop",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/Users/moustaphas.dieme/Desktop/EntretienMentor/EntretienMentorBackend/src/main/resources",
-    "settings.editor.selected.configurable": "preferences.pluginManager"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.app.executor&quot;: &quot;Run&quot;,
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;JUnit.InterviewRepositoryTests.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ResponseRepositoryTests.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.UserRepositoryTests.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.UserRepositoryTests.testCreate.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.UserRepositoryTests.testCreateUser.executor&quot;: &quot;Run&quot;,
+    &quot;Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.EntretienMentor-Backend [org.apache.maven.plugins:maven-clean-plugin:3.1.0:clean].executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;develop&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/moustaphas.dieme/Desktop/EntretienMentor/EntretienMentorBackend/src/main/resources&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/resources" />
@@ -186,11 +198,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.InterviewRepositoryTests" />
+        <item itemvalue="JUnit.UserRepositoryTests.testCreateUser" />
+        <item itemvalue="JUnit.UserRepositoryTests.testCreate" />
         <item itemvalue="JUnit.UserRepositoryTests" />
         <item itemvalue="JUnit.ResponseRepositoryTests" />
-        <item itemvalue="JUnit.UserRepositoryTests.testCreate" />
-        <item itemvalue="JUnit.UserRepositoryTests.testCreateUser" />
+        <item itemvalue="JUnit.InterviewRepositoryTests" />
       </list>
     </recent_temporary>
   </component>

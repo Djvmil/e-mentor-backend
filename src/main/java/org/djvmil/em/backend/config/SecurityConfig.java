@@ -48,7 +48,7 @@ public class SecurityConfig {
 								response.sendError(HttpServletResponse.SC_UNAUTHORIZED, "Unauthorized")
 				)).authenticationProvider(daoAuthenticationProvider());
 
-        return http.build();
+		return http.build();
 	}
 
 	@Bean

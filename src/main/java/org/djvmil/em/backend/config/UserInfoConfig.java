@@ -19,17 +19,17 @@ import lombok.NoArgsConstructor;
 public class UserInfoConfig implements UserDetails {
 
 	private static final long serialVersionUID = 1L;
-	
+
 	private String email;
 	private String password;
 	private List<GrantedAuthority> authorities;
-	
+
 	public UserInfoConfig(User user) {
 		this.email = user.getEmail();
 		this.password = user.getPassword();
 		this.authorities = user.getRoles().stream().map(role -> new SimpleGrantedAuthority(role.getRole())).collect(Collectors.toList());
 	}
-	
+
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {
 		return authorities;
@@ -54,5 +54,5 @@ public class UserInfoConfig implements UserDetails {
 	public boolean isEnabled() {
 		return true;
 	}
-	
+
 }
