@@ -25,15 +25,12 @@ public class EMUserDetailsService implements UserDetailsService {
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 
-        System.out.println("except 9");
         UserDto userDto = userService.getByEmail(username);
-        System.out.println("except 8");
         if (userDto == null) throw new UsernameNotFoundException("User with this username does't exist");
 
         List<GrantedAuthority> authorities = new ArrayList<>();
         userDto.getRoles().forEach(role -> authorities.add( new SimpleGrantedAuthority(role.getRole())));
 
-        System.out.println("except 5-1");
         return new UserInfoConfig(userDto.getEmail(),
                 userDto.getPassword(),
                 authorities

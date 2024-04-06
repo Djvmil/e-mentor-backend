@@ -8,7 +8,7 @@ import org.djvmil.em.backend.core.dto.UserDto;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class JWTAuthResponse {
+public class RegisterResponse {
 	private String accesToken;
 	
 	private UserDto user;

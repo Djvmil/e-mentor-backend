@@ -5,7 +5,7 @@ package org.djvmil.em.backend.api;
 import org.djvmil.em.backend.core.dto.UserDto;
 import org.djvmil.em.backend.core.service.UserService;
 import org.djvmil.em.backend.exceptions.UserNotFoundException;
-import org.djvmil.em.backend.payloads.JWTAuthResponse;
+import org.djvmil.em.backend.payloads.RegisterResponse;
 import org.djvmil.em.backend.payloads.LoginCredentials;
 import org.djvmil.em.backend.security.JWTUtil;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,8 +13,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
-import org.springframework.security.core.Authentication;
-import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -44,7 +42,9 @@ public class AuthRessource {
     private PasswordEncoder passwordEncoder;
 
     @PostMapping("/register")
-    public ResponseEntity<Map<String, Object>> registerHandler(@Valid @RequestBody UserDto user) throws UserNotFoundException {
+    public ResponseEntity<Map<String, Object>> registerHandler(@RequestBody UserDto user) throws UserNotFoundException {
+
+        System.out.println("password: "+ user.getPassword());
         String encodedPass = passwordEncoder.encode(user.getPassword());
 
         user.setPassword(encodedPass);
@@ -59,7 +59,7 @@ public class AuthRessource {
     }
 
     @PostMapping("/login")
-    public JWTAuthResponse loginHandler(@Valid @RequestBody LoginCredentials credentials) {
+    public RegisterResponse loginHandler(@Valid @RequestBody LoginCredentials credentials) {
 
         UsernamePasswordAuthenticationToken authCredentials = new UsernamePasswordAuthenticationToken(
                 credentials.getEmail(), credentials.getPassword());
@@ -69,7 +69,7 @@ public class AuthRessource {
 
         UserDto userDto = userService.getByEmail(credentials.getEmail());
 
-        return new JWTAuthResponse(
+        return new RegisterResponse(
                 token,
                 userDto
         );
