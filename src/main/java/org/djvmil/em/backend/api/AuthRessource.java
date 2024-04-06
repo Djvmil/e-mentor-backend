@@ -1,28 +1,23 @@
 package org.djvmil.em.backend.api;
 
 
-
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
+import jakarta.validation.Valid;
 import org.djvmil.em.backend.core.dto.UserDto;
 import org.djvmil.em.backend.core.service.UserService;
 import org.djvmil.em.backend.exceptions.UserNotFoundException;
-import org.djvmil.em.backend.payloads.RegisterResponse;
 import org.djvmil.em.backend.payloads.LoginCredentials;
+import org.djvmil.em.backend.payloads.RegisterRequest;
+import org.djvmil.em.backend.payloads.AuthResponse;
 import org.djvmil.em.backend.security.JWTUtil;
+import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
-import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import io.swagger.v3.oas.annotations.security.SecurityRequirement;
-import jakarta.validation.Valid;
-
-import java.util.Collections;
-import java.util.Map;
 
 @RestController
 @RequestMapping("/api")
@@ -34,32 +29,29 @@ public class AuthRessource {
 
     @Autowired
     private JWTUtil jwtUtil;
+    @Autowired
+    private ModelMapper modelMapper;
 
     @Autowired
     private AuthenticationManager authenticationManager;
 
-    @Autowired
-    private PasswordEncoder passwordEncoder;
 
     @PostMapping("/register")
-    public ResponseEntity<Map<String, Object>> registerHandler(@RequestBody UserDto user) throws UserNotFoundException {
+    public AuthResponse registerHandler(@Valid @RequestBody RegisterRequest user) throws UserNotFoundException {
 
-        System.out.println("password: "+ user.getPassword());
-        String encodedPass = passwordEncoder.encode(user.getPassword());
-
-        user.setPassword(encodedPass);
-
-        //UserDto userDTO = userService.registerUser(user);
-        UserDto userDTO = new UserDto();
+        UserDto userDTO = userService.registerUser(modelMapper.map(user, UserDto.class));
 
         String token = jwtUtil.generateToken(userDTO.getEmail());
 
-        return new ResponseEntity<Map<String, Object>>(Collections.singletonMap("jwt-token", token),
-                HttpStatus.CREATED);
+        return new AuthResponse(
+                token,
+                userDTO
+        );
+       // return new ResponseEntity<Map<String, Object>>(Collections.singletonMap("jwt-token", token), HttpStatus.CREATED);
     }
 
     @PostMapping("/login")
-    public RegisterResponse loginHandler(@Valid @RequestBody LoginCredentials credentials) {
+    public AuthResponse loginHandler(@Valid @RequestBody LoginCredentials credentials) {
 
         UsernamePasswordAuthenticationToken authCredentials = new UsernamePasswordAuthenticationToken(
                 credentials.getEmail(), credentials.getPassword());
@@ -69,7 +61,7 @@ public class AuthRessource {
 
         UserDto userDto = userService.getByEmail(credentials.getEmail());
 
-        return new RegisterResponse(
+        return new AuthResponse(
                 token,
                 userDto
         );

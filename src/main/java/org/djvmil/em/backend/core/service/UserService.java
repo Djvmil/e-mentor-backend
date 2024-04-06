@@ -36,6 +36,13 @@ public class UserService {
         return modelMapper.map(repository.findByUsername(login), UserDto.class);
     }
 
+    public UserDto registerUser(UserDto userDto){
+        User user = modelMapper.map(userDto, User.class);
+        user.setPassword(passwordEncoder.encode(userDto.getPassword()));
+
+        return modelMapper.map(repository.save(user), UserDto.class);
+    }
+
     public UserDto create(UserDto userDto){
         User user = modelMapper.map(userDto, User.class);
         user.setPassword(passwordEncoder.encode(userDto.getPassword()));
