@@ -8,7 +8,7 @@ import java.util.Date;
 import java.util.List;
 
 @Data
-public class RegisterRequest {
+public class AuthRequest {
 	private String firstname;
 	private String lastname;
 	private List<Role> roles;

@@ -7,7 +7,7 @@ import org.djvmil.em.backend.core.dto.UserDto;
 import org.djvmil.em.backend.core.service.UserService;
 import org.djvmil.em.backend.exceptions.UserNotFoundException;
 import org.djvmil.em.backend.payloads.LoginCredentials;
-import org.djvmil.em.backend.payloads.RegisterRequest;
+import org.djvmil.em.backend.payloads.AuthRequest;
 import org.djvmil.em.backend.payloads.AuthResponse;
 import org.djvmil.em.backend.security.JWTUtil;
 import org.modelmapper.ModelMapper;
@@ -37,7 +37,7 @@ public class AuthRessource {
 
 
     @PostMapping("/register")
-    public AuthResponse registerHandler(@Valid @RequestBody RegisterRequest user) throws UserNotFoundException {
+    public AuthResponse registerHandler(@Valid @RequestBody AuthRequest user) throws UserNotFoundException {
 
         UserDto userDTO = userService.registerUser(modelMapper.map(user, UserDto.class));
 
@@ -51,7 +51,7 @@ public class AuthRessource {
     }
 
     @PostMapping("/login")
-    public AuthResponse loginHandler(@Valid @RequestBody LoginCredentials credentials) {
+    public AuthResponse loginHandler(@RequestBody AuthRequest credentials) {
 
         UsernamePasswordAuthenticationToken authCredentials = new UsernamePasswordAuthenticationToken(
                 credentials.getEmail(), credentials.getPassword());
