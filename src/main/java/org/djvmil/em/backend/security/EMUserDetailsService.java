@@ -31,13 +31,6 @@ public class EMUserDetailsService implements UserDetailsService {
         if (userDto == null) throw new UsernameNotFoundException("User with this username does't exist");
 
         List<GrantedAuthority> authorities = new ArrayList<>();
-       // userDto.getRoles().forEach(role -> {
-       //     GrantedAuthority authority = new SimpleGrantedAuthority(role.getRole());
-       //     authorities.add(authority);
-
-       //         });
-
-        System.out.println("except 5");
         userDto.getRoles().forEach(role -> authorities.add( new SimpleGrantedAuthority(role.getRole())));
 
         System.out.println("except 5-1");
@@ -45,6 +38,5 @@ public class EMUserDetailsService implements UserDetailsService {
                 userDto.getPassword(),
                 authorities
         );
-      //  return userDto.map(UserInfoConfig::new).orElseThrow(() -> new ResourceNotFoundException("User", "email", username));
     }
 }
