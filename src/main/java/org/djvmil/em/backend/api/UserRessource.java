@@ -15,12 +15,6 @@ public class UserRessource {
     @Autowired // like @Inject or @Ressource in JEE
     private UserService service;
 
-   /* @PostMapping("/login")
-    public UserDto login(@RequestBody UserDto userDto){
-
-        return service.login(userDto.getUsername(), userDto.getPassword());
-    }*/
-
     @PostMapping
     public UserDto create(@RequestBody UserDto userDto){
 

@@ -6,7 +6,6 @@ import jakarta.validation.Valid;
 import org.djvmil.em.backend.core.dto.UserDto;
 import org.djvmil.em.backend.core.service.UserService;
 import org.djvmil.em.backend.exceptions.UserNotFoundException;
-import org.djvmil.em.backend.payloads.LoginCredentials;
 import org.djvmil.em.backend.payloads.AuthRequest;
 import org.djvmil.em.backend.payloads.AuthResponse;
 import org.djvmil.em.backend.security.JWTUtil;
@@ -47,7 +46,6 @@ public class AuthRessource {
                 token,
                 userDTO
         );
-       // return new ResponseEntity<Map<String, Object>>(Collections.singletonMap("jwt-token", token), HttpStatus.CREATED);
     }
 
     @PostMapping("/login")
