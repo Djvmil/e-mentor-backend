@@ -56,8 +56,10 @@ public class AuthRessource {
 
         authenticationManager.authenticate(authCredentials);
         String token = jwtUtil.generateToken(credentials.getEmail());
-
-        UserDto userDto = userService.getByEmail(credentials.getEmail());
+        UserDto userDto = null;
+        if (!credentials.getEmail().isBlank())
+            userDto = userService.getByEmail(credentials.getEmail());
+        else userDto = userService.getByUsername(credentials.getUsername());
 
         return new AuthResponse(
                 token,

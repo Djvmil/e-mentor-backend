@@ -16,6 +16,7 @@ public class AuthRequest {
 	private String country;
 	private String phoneNumber;
 	private String email;
+	private String username;
 	private String birthDate;
 	private String password;
 	private Boolean isEmailVerified;
