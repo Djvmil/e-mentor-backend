@@ -37,7 +37,6 @@ public class AuthentificationController {
         return "home";
     }
 
-    //@RequestMapping("/{id}")
     @GetMapping("/{id}")
     public String getUserById(@PathVariable("id") Long userId, Model model){
         System.out.println("Tentative d'affichage de home");
