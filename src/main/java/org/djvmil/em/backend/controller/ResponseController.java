@@ -34,7 +34,6 @@ public class ResponseController {
         return "home";
     }
 
-    //@RequestMapping("/{id}")
     @GetMapping("/{id}")
     public String findById(@PathVariable("id") Long responseId, Model model){
         ResponseDto response = service.findById(responseId);

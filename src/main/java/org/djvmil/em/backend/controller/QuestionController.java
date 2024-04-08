@@ -57,8 +57,6 @@ public class QuestionController {
 
         model.addAttribute("user", userAtt);
 
-       // service.save(user);
-
         return "result-add-user";
     }
 
