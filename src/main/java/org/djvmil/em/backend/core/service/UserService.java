@@ -79,7 +79,7 @@ public class UserService {
     @Transactional
     public UserDto addRoleToUser(String username, String roleName) {
         Role role = roleRepository.findByRole(roleName);
-        User user = repository.findByUsername(username);
+        User user = repository.getByEmail(username);
         user.getRoles().add(role);
 
         return modelMapper.map(user, UserDto.class);

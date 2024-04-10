@@ -24,6 +24,8 @@ public class BackendApplication{ //implements CommandLineRunner {
 
 	public static void main(String[] args) {
 		SpringApplication.run(BackendApplication.class, args);
+
+
 	}
 
 	@Bean
@@ -54,7 +56,6 @@ public class BackendApplication{ //implements CommandLineRunner {
 		userAdmin.setUserID(null);
 		userAdmin.setFirstname("admin");
 		userAdmin.setLastname("admin");
-		userAdmin.setUsername("admin");
 		userAdmin.setPassword("1234");
 		userAdmin.setEmail("admin@em.com");
 		userAdmin.setEnabled(true);
@@ -64,16 +65,15 @@ public class BackendApplication{ //implements CommandLineRunner {
 		userSimple.setUserID(null);
 		userSimple.setFirstname("yassine");
 		userSimple.setLastname("nadhem");
-		userSimple.setUsername("yassine");
 		userSimple.setPassword("1234");
 		userSimple.setEmail("yassine@em.com");
 		userSimple.setEnabled(true);
 		userService.create(userSimple);
 
 		//ajouter les rôles aux users
-		userService.addRoleToUser(userAdmin.getUsername(), "ADMIN");
-		userService.addRoleToUser(userAdmin.getUsername(), "USER");
-		userService.addRoleToUser(userSimple.getUsername(), "USER");
+		userService.addRoleToUser(userAdmin.getEmail(), "ADMIN");
+		userService.addRoleToUser(userAdmin.getEmail(), "USER");
+		userService.addRoleToUser(userSimple.getEmail(), "USER");
 	}*/
 
 }
