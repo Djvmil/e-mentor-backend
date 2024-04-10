@@ -25,10 +25,10 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 public class SecurityConfig {
 
 	@Autowired
-	private JWTFilter jwtFilter;
+	DaoAuthenticationProvider authenticationProvider;
 
 	@Autowired
-	private EMUserDetailsService userDetailsServiceImpl;
+	private JWTFilter jwtFilter;
 
 	@Bean
 	public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
@@ -46,28 +46,9 @@ public class SecurityConfig {
 				.exceptionHandling(handling -> handling.authenticationEntryPoint(
 						(request, response, authException) ->
 								response.sendError(HttpServletResponse.SC_UNAUTHORIZED, "Unauthorized")
-				)).authenticationProvider(daoAuthenticationProvider());
+				)).authenticationProvider(authenticationProvider);
 
 		return http.build();
 	}
 
-	@Bean
-	public DaoAuthenticationProvider daoAuthenticationProvider() {
-		DaoAuthenticationProvider provider = new DaoAuthenticationProvider();
-
-		provider.setUserDetailsService(userDetailsServiceImpl);
-		provider.setPasswordEncoder(passwordEncoder());
-
-		return provider;
-	}
-
-	@Bean
-	public BCryptPasswordEncoder passwordEncoder() {
-		return new BCryptPasswordEncoder();
-	}
-
-	@Bean
-	public AuthenticationManager authenticationManager(AuthenticationConfiguration configuration) throws Exception {
-		return configuration.getAuthenticationManager();
-	}
 }
