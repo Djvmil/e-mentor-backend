@@ -52,7 +52,6 @@ public class AuthRessource {
 
     @PostMapping("/add-role")
     public RoleRequest addRoleToUser(@Valid @RequestBody RoleRequest roleRequest) throws UserNotFoundException {
-
         roleRequest.getRoles().forEach( role ->
             userService.addRoleToUser(roleRequest.getEmail(), role)
         );
