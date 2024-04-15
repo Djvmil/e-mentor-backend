@@ -8,6 +8,7 @@ import org.djvmil.em.backend.core.service.UserService;
 import org.djvmil.em.backend.exceptions.UserNotFoundException;
 import org.djvmil.em.backend.payloads.AuthRequest;
 import org.djvmil.em.backend.payloads.AuthResponse;
+import org.djvmil.em.backend.payloads.RoleRequest;
 import org.djvmil.em.backend.security.JWTUtil;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -46,6 +47,17 @@ public class AuthRessource {
                 token,
                 userDTO
         );
+    }
+
+
+    @PostMapping("/add-role")
+    public RoleRequest addRoleToUser(@Valid @RequestBody RoleRequest roleRequest) throws UserNotFoundException {
+
+        roleRequest.getRoles().forEach( role ->
+            userService.addRoleToUser(roleRequest.getEmail(), role)
+        );
+
+        return roleRequest;
     }
 
     @PostMapping("/login")
