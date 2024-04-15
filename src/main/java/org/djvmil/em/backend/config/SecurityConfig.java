@@ -1,5 +1,6 @@
 package org.djvmil.em.backend.config;
 
+import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import org.djvmil.em.backend.security.EMUserDetailsService;
 import org.djvmil.em.backend.security.JWTFilter;
@@ -18,6 +19,11 @@ import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
+import org.springframework.web.cors.CorsConfiguration;
+import org.springframework.web.cors.CorsConfigurationSource;
+
+import java.util.Arrays;
+import java.util.Collections;
 
 @Configuration
 @EnableWebSecurity
@@ -36,6 +42,21 @@ public class SecurityConfig {
 		http.sessionManagement(session ->
 						session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
 				.csrf(AbstractHttpConfigurer::disable)
+				.cors(cors -> new CorsConfigurationSource() {
+
+					@Override
+					public CorsConfiguration getCorsConfiguration(HttpServletRequest request) {
+						CorsConfiguration corsConf = new CorsConfiguration();
+
+						corsConf.setAllowedOrigins(Arrays.asList("http://localhost:4200/", "*******"));
+						corsConf.setAllowedHeaders(Collections.singletonList("Authorization"));
+						corsConf.setAllowedHeaders(Collections.singletonList("*"));
+						corsConf.setAllowedMethods(Collections.singletonList("*"));
+						corsConf.setMaxAge(3600L);
+						corsConf.setAllowCredentials(true);
+						return corsConf;
+					}
+				})
 				.authorizeHttpRequests( requests ->
 						requests.requestMatchers(AppConstants.PUBLIC_URLS).permitAll()
 								.requestMatchers(AppConstants.USER_URLS).hasAnyAuthority("USER", "ADMIN")
