@@ -7,10 +7,9 @@ import org.djvmil.em.backend.core.entity.User;
 import org.djvmil.em.backend.core.helpers.Helper;
 import org.djvmil.em.backend.core.repository.IRoleRepository;
 import org.djvmil.em.backend.core.repository.IUserRepository;
-import org.djvmil.em.backend.payloads.AuthRequest;
+import org.djvmil.em.backend.exceptions.UserRegistrationException;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -38,22 +37,74 @@ public class UserService {
         return modelMapper.map(repository.findByUsername(login), UserDto.class);
     }
 
-    public UserDto registerUser(UserDto userDto){
-        User user = modelMapper.map(userDto, User.class);
-        user.setPassword(passwordEncoder.encode(userDto.getPassword()));
+    //@Transactional
+    public UserDto registerUser(UserDto userDto) throws UserRegistrationException {
+        try {
+            if (userDto.getFirstname() == null || userDto.getFirstname().isBlank()) {
+                throw new UserRegistrationException("Firstname required");
+            }
+            if (userDto.getLastname() == null || userDto.getLastname().isBlank()) {
+                throw new UserRegistrationException("Lastname required");
+            }
+            if ((userDto.getEmail() == null || userDto.getEmail().isBlank()) && (userDto.getPhoneNumber() == null || userDto.getPhoneNumber().isBlank())) {
+                throw new UserRegistrationException("Email or Phone Number required");
+            }
 
-        return modelMapper.map(repository.save(user), UserDto.class);
+            if (userDto.getUsername() != null && !userDto.getUsername().isBlank()) {
+                if (getByUsername(userDto.getUsername()) != null)
+                    throw new UserRegistrationException("A user with this username already exists");
+            }
+
+            if (userDto.getEmail() != null && !userDto.getEmail().isBlank()){
+                if (getByEmail(userDto.getEmail()) != null)
+                    throw new UserRegistrationException("A user with this email already exists");
+            }
+            if (userDto.getPhoneNumber() != null && !userDto.getPhoneNumber().isBlank()){
+                if (getByPhoneNumber(userDto.getPhoneNumber()) != null)
+                    throw new UserRegistrationException("A user with this phone number already exists");
+            }
+
+            if (userDto.getRoles() != null)
+                userDto.getRoles().forEach( role -> {
+
+                    if (role.getRoleID() == null){
+                        RoleDto roleSearch = getRole(role.getRole());
+                        if (roleSearch != null) {
+                            role.setRoleID(roleSearch.getRoleID());
+                            role.setDateUpdated(roleSearch.getDateUpdated());
+                            role.setDateCreated(roleSearch.getDateCreated());
+
+                        }
+                    }
+                });
+
+            User user = modelMapper.map(userDto, User.class);
+            user.setPassword(passwordEncoder.encode(userDto.getPassword()));
+
+            return modelMapper.map(repository.save(user), UserDto.class);
+        } catch (Exception e) {
+            // Handle exception
+            throw new UserRegistrationException(e.getMessage());
+        }
     }
 
     public UserDto create(UserDto userDto){
-        User user = modelMapper.map(userDto, User.class);
-        user.setPassword(passwordEncoder.encode(userDto.getPassword()));
+        try {
+            User user = modelMapper.map(userDto, User.class);
+            user.setPassword(passwordEncoder.encode(userDto.getPassword()));
 
-        return modelMapper.map(repository.save(user), UserDto.class);
+            return modelMapper.map(repository.save(user), UserDto.class);
+        } catch (Exception e) {
+            return null;
+        }
     }
 
     public UserDto getById(Long userId) {
-        return modelMapper.map(repository.findById(userId).orElseThrow(), UserDto.class);
+        try {
+            return modelMapper.map(repository.findById(userId).orElseThrow(), UserDto.class);
+        } catch (Exception e) {
+            return null;
+        }
     }
 
 
@@ -64,47 +115,80 @@ public class UserService {
                 .collect(Collectors.toList());
     }
     public UserDto getByUsername(String username) {
-        return modelMapper.map(repository.findByUsername(username), UserDto.class);
+        try {
+            return modelMapper.map(repository.findByUsername(username), UserDto.class);
+        } catch (Exception e) {
+            return null;
+        }
     }
 
     public UserDto getByEmail(String email) {
-        return modelMapper.map(repository.getByEmail(email), UserDto.class);
+        try {
+            return modelMapper.map(repository.getByEmail(email), UserDto.class);
+        } catch (Exception e) {
+            return null;
+        }
     }
 
     public UserDto getByPhoneNumber(String phoneNumber) {
+        try {
         return modelMapper.map(repository.getByPhoneNumber(phoneNumber), UserDto.class);
+    } catch (Exception e) {
+        return null;
+    }
+    }
+
+    public RoleDto getRole(String roleName) {
+        try {
+            Role role =  roleRepository.findByRole(roleName);
+
+            System.out.println("getRole: 123 "+ role);
+
+            return modelMapper.map(role, RoleDto.class);
+        } catch (Exception e) {
+            return null;
+        }
     }
 
     public RoleDto addRole(RoleDto roleDto) {
-        Role role =  roleRepository.save(modelMapper.map(roleDto, Role.class));
+        try {
+            Role role =  roleRepository.save(modelMapper.map(roleDto, Role.class));
 
-        return modelMapper.map(role, RoleDto.class);
+            return modelMapper.map(role, RoleDto.class);
+        } catch (Exception e) {
+            return null;
+        }
     }
 
 
     @Transactional
     public UserDto addRoleToUser(String username, String roleName) {
-        Role role = roleRepository.findByRole(roleName);
-        User user = repository.getByEmail(username);
-        user.getRoles().add(role);
+        try {
+            Role role = roleRepository.findByRole(roleName);
+            User user = repository.getByEmail(username);
+            user.getRoles().add(role);
 
-        return modelMapper.map(user, UserDto.class);
+            return modelMapper.map(user, UserDto.class);
+        } catch (Exception e) {
+            return null;
+        }
     }
 
-
-    @Transactional
     public UserDto getUser(String username) {
-        UserDto userDto;
+        try {
+            UserDto userDto;
 
-        if (Helper.isEmailValid(username))
-            userDto = getByEmail(username);
+            if (Helper.isEmailValid(username))
+                userDto = getByEmail(username);
+            else if (Helper.isPhoneNumberValid(username))
+                userDto = getByPhoneNumber(username);
+            else
+                userDto = getByUsername(username);
 
-        else if(Helper.isPhoneNumberValid(username))
-            userDto = getByPhoneNumber(username);
-
-        else
-            userDto = getByUsername(username);
-
-        return userDto;
+            return userDto;
+        } catch (Exception e) {
+            return null;
+        }
     }
+
 }

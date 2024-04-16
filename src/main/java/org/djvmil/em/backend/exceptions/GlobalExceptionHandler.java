@@ -1,13 +1,7 @@
 package org.djvmil.em.backend.exceptions;
 
-import java.io.PrintWriter;
-import java.io.StringWriter;
-import java.util.HashMap;
-import java.util.Map;
-
-import org.djvmil.em.backend.payloads.APIErrorResponse;
+import jakarta.validation.ConstraintViolationException;
 import org.djvmil.em.backend.payloads.APIResponse;
-import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -15,25 +9,26 @@ import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.validation.FieldError;
 import org.springframework.web.bind.MethodArgumentNotValidException;
-import org.springframework.web.bind.MissingPathVariableException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
-
-
-import jakarta.validation.ConstraintViolationException;
 import org.springframework.web.context.request.WebRequest;
 import org.springframework.web.servlet.resource.NoResourceFoundException;
 import org.springframework.web.util.WebUtils;
 
+import java.io.PrintWriter;
+import java.io.StringWriter;
+import java.util.HashMap;
+import java.util.Map;
+
 @RestControllerAdvice
 public class GlobalExceptionHandler {
-	APIErrorResponse errorResponse;
+	APIResponse<String> errorResponse;
 
 	/** Provides handling for exceptions throughout this service. */
 	@ExceptionHandler({AccessDeniedException.class, NoResourceFoundException.class, UserNotFoundException.class,
 			MethodArgumentNotValidException.class, ConstraintViolationException.class, AuthenticationException.class,
-			BadCredentialsException.class})
-	public final ResponseEntity<APIErrorResponse> handleException(Exception ex, WebRequest request) {
+			BadCredentialsException.class, IllegalArgumentException.class, UserRegistrationException.class})
+	public final ResponseEntity<APIResponse<String>> handleException(Exception ex, WebRequest request) {
 		HttpHeaders headers = new HttpHeaders();
 
 		if (ex instanceof UserNotFoundException unfe) {
@@ -42,6 +37,14 @@ public class GlobalExceptionHandler {
 
 		} else if (ex instanceof NoResourceFoundException exception) {
 			HttpStatus status = HttpStatus.NOT_FOUND;
+            return handleCustomException(exception, headers, status, request);
+
+		} else if (ex instanceof IllegalArgumentException exception) {
+			HttpStatus status = HttpStatus.BAD_REQUEST;
+            return handleCustomException(exception, headers, status, request);
+
+		} else if (ex instanceof UserRegistrationException exception) {
+			HttpStatus status = HttpStatus.BAD_REQUEST;
             return handleCustomException(exception, headers, status, request);
 
 		} else if (ex instanceof BadCredentialsException exception) {
@@ -60,15 +63,15 @@ public class GlobalExceptionHandler {
 	}
 
 	/** Customize the response for UserNotFoundException. */
-	protected ResponseEntity<APIErrorResponse> handleCustomException(Exception ex, HttpHeaders headers, HttpStatus status, WebRequest request) {
+	protected ResponseEntity<APIResponse<String>> handleCustomException(Exception ex, HttpHeaders headers, HttpStatus status, WebRequest request) {
 
-		errorResponse = new APIErrorResponse(
-				status.value(),
-				status.name(),
-				ex.getMessage(),
-				getStackTrace(ex),
-				request.toString()
-		);
+		errorResponse = new APIResponse<>(
+                status.value(),
+                status.name(),
+                ex.getMessage(),
+                getStackTrace(ex),
+                request.toString()
+        );
 
 		return handleExceptionInternal(ex, errorResponse , headers, status, request);
 	}
@@ -78,16 +81,7 @@ public class GlobalExceptionHandler {
 		StringWriter stringWriter = new StringWriter();
 		PrintWriter printWriter = new PrintWriter(stringWriter);
 		ex.printStackTrace(printWriter);
-		String stackTrace = stringWriter.toString();
-		return stackTrace;
-	}
-
-	public ResponseEntity<APIResponse> myAPIException(APIException e) {
-		String message = e.getMessage();
-
-		APIResponse res = new APIResponse(message, false);
-
-		return new ResponseEntity<APIResponse>(res, HttpStatus.BAD_REQUEST);
+        return stringWriter.toString();
 	}
 
 	public ResponseEntity<Map<String, String>> myMethodArgumentNotValidException(MethodArgumentNotValidException e) {
@@ -124,24 +118,9 @@ public class GlobalExceptionHandler {
 		return new ResponseEntity<String>(res, HttpStatus.BAD_REQUEST);
 	}
 
-	//@ExceptionHandler(MissingPathVariableException.class)
-	public ResponseEntity<APIResponse> myMissingPathVariableException(MissingPathVariableException e) {
-		APIResponse res = new APIResponse(e.getMessage(), false);
-
-		return new ResponseEntity<APIResponse>(res, HttpStatus.BAD_REQUEST);
-	}
-	
-	//@ExceptionHandler(DataIntegrityViolationException.class)
-	public ResponseEntity<APIResponse> myDataIntegrityException(DataIntegrityViolationException e) {
-		APIResponse res = new APIResponse(e.getMessage(), false);
-
-		return new ResponseEntity<APIResponse>(res, HttpStatus.BAD_REQUEST);
-	}
-
-
 
 	/** A single place to customize the response body of all Exception types. */
-	protected ResponseEntity<APIErrorResponse> handleExceptionInternal(Exception ex, APIErrorResponse body, HttpHeaders headers, HttpStatus status, WebRequest request) {
+	protected ResponseEntity<APIResponse<String>> handleExceptionInternal(Exception ex, APIResponse<String> body, HttpHeaders headers, HttpStatus status, WebRequest request) {
 		if (HttpStatus.INTERNAL_SERVER_ERROR.equals(status)) {
 			request.setAttribute(WebUtils.ERROR_EXCEPTION_ATTRIBUTE, ex, WebRequest.SCOPE_REQUEST);
 		}
