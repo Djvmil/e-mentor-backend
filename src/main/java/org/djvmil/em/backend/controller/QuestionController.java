@@ -29,7 +29,6 @@ public class QuestionController {
 
     @GetMapping("/{id}")
     public String findById(@PathVariable("id") Long questionId, Model model){
-        System.out.println("Tentative d'affichage de home");
         QuestionDto question = service.findById(questionId);
         model.addAttribute("question", question);
 
@@ -38,7 +37,6 @@ public class QuestionController {
 
     @GetMapping("add")
     public String addUser(@ModelAttribute UserForm user){
-        System.out.println("Tentative d'affichage de GetMapping = "+user.formatToDB());
 
         return "add-user";
     }

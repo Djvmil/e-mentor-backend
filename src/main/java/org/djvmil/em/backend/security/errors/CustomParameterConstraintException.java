@@ -1,4 +1,4 @@
-package org.djvmil.em.backend.api;
+package org.djvmil.em.backend.security.errors;
 
 public class CustomParameterConstraintException extends RuntimeException {
     public CustomParameterConstraintException() {

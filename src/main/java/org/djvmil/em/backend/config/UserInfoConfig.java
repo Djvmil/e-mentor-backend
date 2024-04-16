@@ -20,12 +20,12 @@ public class UserInfoConfig implements UserDetails {
 
 	private static final long serialVersionUID = 1L;
 
-	private String email;
+	private String username;
 	private String password;
 	private List<GrantedAuthority> authorities;
 
 	public UserInfoConfig(User user) {
-		this.email = user.getEmail();
+		this.username = user.getUsername();
 		this.password = user.getPassword();
 		this.authorities = user.getRoles().stream().map(role -> new SimpleGrantedAuthority(role.getRole())).collect(Collectors.toList());
 	}
@@ -36,7 +36,7 @@ public class UserInfoConfig implements UserDetails {
 	}
 	@Override
 	public String getUsername() {
-		return email;
+		return username;
 	}
 	@Override
 	public boolean isAccountNonExpired() {

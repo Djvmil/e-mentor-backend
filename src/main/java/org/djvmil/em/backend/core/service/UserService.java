@@ -4,8 +4,10 @@ import org.djvmil.em.backend.core.dto.RoleDto;
 import org.djvmil.em.backend.core.dto.UserDto;
 import org.djvmil.em.backend.core.entity.Role;
 import org.djvmil.em.backend.core.entity.User;
+import org.djvmil.em.backend.core.helpers.Helper;
 import org.djvmil.em.backend.core.repository.IRoleRepository;
 import org.djvmil.em.backend.core.repository.IUserRepository;
+import org.djvmil.em.backend.payloads.AuthRequest;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -69,6 +71,10 @@ public class UserService {
         return modelMapper.map(repository.getByEmail(email), UserDto.class);
     }
 
+    public UserDto getByPhoneNumber(String phoneNumber) {
+        return modelMapper.map(repository.getByPhoneNumber(phoneNumber), UserDto.class);
+    }
+
     public RoleDto addRole(RoleDto roleDto) {
         Role role =  roleRepository.save(modelMapper.map(roleDto, Role.class));
 
@@ -83,5 +89,22 @@ public class UserService {
         user.getRoles().add(role);
 
         return modelMapper.map(user, UserDto.class);
+    }
+
+
+    @Transactional
+    public UserDto getUser(String username) {
+        UserDto userDto;
+
+        if (Helper.isEmailValid(username))
+            userDto = getByEmail(username);
+
+        else if(Helper.isPhoneNumberValid(username))
+            userDto = getByPhoneNumber(username);
+
+        else
+            userDto = getByUsername(username);
+
+        return userDto;
     }
 }
