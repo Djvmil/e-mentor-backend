@@ -4,12 +4,13 @@ package org.djvmil.em.backend.api;
 import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import jakarta.validation.Valid;
 import org.djvmil.em.backend.core.dto.UserDto;
+import org.djvmil.em.backend.core.helpers.Helper;
 import org.djvmil.em.backend.core.service.UserService;
 import org.djvmil.em.backend.exceptions.UserNotFoundException;
 import org.djvmil.em.backend.payloads.AuthRequest;
 import org.djvmil.em.backend.payloads.AuthResponse;
 import org.djvmil.em.backend.payloads.RoleRequest;
-import org.djvmil.em.backend.security.JWTUtil;
+import org.djvmil.em.backend.security.JwtService;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -26,7 +27,7 @@ public class AuthRessource {
     private UserService userService;
 
     @Autowired
-    private JWTUtil jwtUtil;
+    private JwtService jwtService;
     @Autowired
     private ModelMapper modelMapper;
 
@@ -38,13 +39,12 @@ public class AuthRessource {
     public AuthResponse registerHandler(@Valid @RequestBody AuthRequest user) throws UserNotFoundException {
 
         UserDto userDTO = userService.registerUser(modelMapper.map(user, UserDto.class));
+        //UsernamePasswordAuthenticationToken authCredentials = new UsernamePasswordAuthenticationToken(credentials.getEmail(), credentials.getPassword());
 
-        String token = jwtUtil.generateToken(userDTO.getEmail());
-
-        return new AuthResponse(
-                token,
-                userDTO
-        );
+        userDTO.setUsername(user.getEmail());
+        return AuthResponse.builder()
+                .accesToken(jwtService.GenerateToken(userDTO.getEmail()))
+                .user(userDTO).build();
     }
 
 
@@ -58,21 +58,24 @@ public class AuthRessource {
     }
 
     @PostMapping("/login")
-    public AuthResponse loginHandler(@RequestBody AuthRequest credentials) {
+    public AuthResponse loginHandler(@RequestBody AuthRequest credentials) throws UserNotFoundException {
+        UserDto userDto = userService.getUser(credentials.getUsername());
 
-        UsernamePasswordAuthenticationToken authCredentials = new UsernamePasswordAuthenticationToken(
-                credentials.getEmail(), credentials.getPassword());
+        System.out.println("userDto find: "+ userDto);
 
-        authenticationManager.authenticate(authCredentials);
-        String token = jwtUtil.generateToken(credentials.getEmail());
-        UserDto userDto = null;
-        if (!credentials.getEmail().isBlank())
-            userDto = userService.getByEmail(credentials.getEmail());
-        else userDto = userService.getByUsername(credentials.getUsername());
+        if (userDto != null){
+            UsernamePasswordAuthenticationToken authCredentials =
+                    new UsernamePasswordAuthenticationToken(credentials.getUsername(), credentials.getPassword());
 
-        return new AuthResponse(
-                token,
-                userDto
-        );
+            authenticationManager.authenticate(authCredentials);
+
+        }else throw new UserNotFoundException("User with this username does't exist");
+
+        System.out.println("userDto find 2: "+ userDto);
+
+        return AuthResponse.builder()
+                .accesToken(jwtService.GenerateToken(userDto.getEmail()))
+                .user(userDto).build();
     }
+
 }

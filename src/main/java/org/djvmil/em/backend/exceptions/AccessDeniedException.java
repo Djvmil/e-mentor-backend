@@ -1,4 +1,4 @@
-package org.djvmil.em.backend.security.exceptions;
+package org.djvmil.em.backend.exceptions;
 
 public class AccessDeniedException extends RuntimeException {
 

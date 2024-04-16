@@ -17,6 +17,7 @@ public class UserDto {
     private Long userID = 1L;
     private String firstname;
     private String lastname;
+    private String username;
     private List<Role> roles;
     private String genre;
     private String country;

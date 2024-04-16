@@ -42,6 +42,11 @@ public class AuthFileRepository implements IUserRepository {
     }
 
     @Override
+    public User getByPhoneNumber(String phoneNumber) {
+        return null;
+    }
+
+    @Override
     public void flush() {
 
     }
