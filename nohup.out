@@ -786,3 +786,474 @@ Hibernate:
 2024-04-16T10:44:03.553+02:00 DEBUG 47343 --- [backend] [nio-8989-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [application/json] and supported [application/json, application/*+json]
 2024-04-16T10:44:03.558+02:00 DEBUG 47343 --- [backend] [nio-8989-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Writing [AuthResponse(accesToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJVc2VyIERldGFpbHMiLCJlbWFpbCI (truncated)...]
 2024-04-16T10:44:03.616+02:00 DEBUG 47343 --- [backend] [nio-8989-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-04-16T10:46:36.915+02:00  INFO 47343 --- [backend] [   File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 2 class path changes (1 addition, 1 deletion, 0 modifications)
+2024-04-16T10:46:36.974+02:00  INFO 47343 --- [backend] [       Thread-5] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-04-16T10:46:36.991+02:00  INFO 47343 --- [backend] [       Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-04-16T10:46:36.997+02:00  INFO 47343 --- [backend] [       Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.2.3)
+
+2024-04-16T10:46:37.278+02:00  INFO 47343 --- [backend] [  restartedMain] o.djvmil.em.backend.BackendApplication   : Starting BackendApplication using Java 17 with PID 47343 (/Users/moustaphas.dieme/Desktop/EntretienMentor/EntretienMentorBackend/target/classes started by moustaphas.dieme in /Users/moustaphas.dieme/Desktop/EntretienMentor/EntretienMentorBackend)
+2024-04-16T10:46:37.278+02:00  INFO 47343 --- [backend] [  restartedMain] o.djvmil.em.backend.BackendApplication   : No active profile set, falling back to 1 default profile: "default"
+2024-04-16T10:46:37.626+02:00  INFO 47343 --- [backend] [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-04-16T10:46:37.665+02:00  INFO 47343 --- [backend] [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 39 ms. Found 14 JPA repository interfaces.
+2024-04-16T10:46:37.899+02:00  INFO 47343 --- [backend] [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8989 (http)
+2024-04-16T10:46:37.900+02:00  INFO 47343 --- [backend] [  restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-04-16T10:46:37.900+02:00  INFO 47343 --- [backend] [  restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-04-16T10:46:37.925+02:00  INFO 47343 --- [backend] [  restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/em]     : Initializing Spring embedded WebApplicationContext
+2024-04-16T10:46:37.925+02:00  INFO 47343 --- [backend] [  restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 645 ms
+2024-04-16T10:46:37.979+02:00  INFO 47343 --- [backend] [  restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2024-04-16T10:46:38.012+02:00  INFO 47343 --- [backend] [  restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-2 - Added connection org.postgresql.jdbc.PgConnection@7e392d2a
+2024-04-16T10:46:38.012+02:00  INFO 47343 --- [backend] [  restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2024-04-16T10:46:38.044+02:00  INFO 47343 --- [backend] [  restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-04-16T10:46:38.047+02:00  INFO 47343 --- [backend] [  restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-04-16T10:46:38.052+02:00  INFO 47343 --- [backend] [  restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-04-16T10:46:38.293+02:00  INFO 47343 --- [backend] [  restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-04-16T10:46:38.444+02:00  INFO 47343 --- [backend] [  restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-04-16T10:46:38.574+02:00 DEBUG 47343 --- [backend] [  restartedMain] o.s.b.w.s.ServletContextInitializerBeans : Mapping filters: springSecurityFilterChain urls=[/*] order=-100, characterEncodingFilter urls=[/*] order=-2147483648, formContentFilter urls=[/*] order=-9900, requestContextFilter urls=[/*] order=-105, JWTFilter urls=[/*] order=2147483647
+2024-04-16T10:46:38.574+02:00 DEBUG 47343 --- [backend] [  restartedMain] o.s.b.w.s.ServletContextInitializerBeans : Mapping servlets: dispatcherServlet urls=[/]
+2024-04-16T10:46:39.029+02:00 DEBUG 47343 --- [backend] [  restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 35 mappings in 'requestMappingHandlerMapping'
+2024-04-16T10:46:39.085+02:00 DEBUG 47343 --- [backend] [  restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**, /swagger-ui*/*swagger-initializer.js, /swagger-ui*/**] in 'resourceHandlerMapping'
+2024-04-16T10:46:39.137+02:00  INFO 47343 --- [backend] [  restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@6bf7b94a, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@6d8caf61, org.springframework.security.web.context.SecurityContextHolderFilter@5753f8a0, org.springframework.security.web.header.HeaderWriterFilter@512eaf93, org.springframework.web.filter.CorsFilter@597541, org.springframework.security.web.authentication.logout.LogoutFilter@4188eea3, org.djvmil.em.backend.security.JWTFilter@3f5045fc, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@564c467a, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@72ba2917, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@451c0768, org.springframework.security.web.session.SessionManagementFilter@2a1a31a0, org.springframework.security.web.access.ExceptionTranslationFilter@72ce6a0a, org.springframework.security.web.access.intercept.AuthorizationFilter@56126240]
+2024-04-16T10:46:39.180+02:00 DEBUG 47343 --- [backend] [  restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2024-04-16T10:46:39.190+02:00 DEBUG 47343 --- [backend] [  restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 4 @ExceptionHandler, 1 ResponseBodyAdvice
+2024-04-16T10:46:39.215+02:00 DEBUG 47343 --- [backend] [  restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 4 @ExceptionHandler, 0 ResponseBodyAdvice
+2024-04-16T10:46:39.372+02:00  INFO 47343 --- [backend] [  restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-04-16T10:46:39.384+02:00  INFO 47343 --- [backend] [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8989 (http) with context path '/em'
+2024-04-16T10:46:39.390+02:00  INFO 47343 --- [backend] [  restartedMain] o.djvmil.em.backend.BackendApplication   : Started BackendApplication in 2.149 seconds (process running for 179.318)
+2024-04-16T10:46:39.392+02:00  INFO 47343 --- [backend] [  restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2024-04-16T10:47:45.811+02:00  INFO 47343 --- [backend] [   File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2024-04-16T10:47:45.822+02:00  INFO 47343 --- [backend] [       Thread-7] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-04-16T10:47:45.823+02:00  INFO 47343 --- [backend] [       Thread-7] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
+2024-04-16T10:47:45.824+02:00  INFO 47343 --- [backend] [       Thread-7] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.2.3)
+
+2024-04-16T10:47:46.002+02:00  INFO 47343 --- [backend] [  restartedMain] o.djvmil.em.backend.BackendApplication   : Starting BackendApplication using Java 17 with PID 47343 (/Users/moustaphas.dieme/Desktop/EntretienMentor/EntretienMentorBackend/target/classes started by moustaphas.dieme in /Users/moustaphas.dieme/Desktop/EntretienMentor/EntretienMentorBackend)
+2024-04-16T10:47:46.002+02:00  INFO 47343 --- [backend] [  restartedMain] o.djvmil.em.backend.BackendApplication   : No active profile set, falling back to 1 default profile: "default"
+2024-04-16T10:47:46.337+02:00  INFO 47343 --- [backend] [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-04-16T10:47:46.360+02:00  INFO 47343 --- [backend] [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 22 ms. Found 14 JPA repository interfaces.
+2024-04-16T10:47:46.497+02:00  INFO 47343 --- [backend] [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8989 (http)
+2024-04-16T10:47:46.498+02:00  INFO 47343 --- [backend] [  restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-04-16T10:47:46.498+02:00  INFO 47343 --- [backend] [  restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-04-16T10:47:46.526+02:00  INFO 47343 --- [backend] [  restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/em]     : Initializing Spring embedded WebApplicationContext
+2024-04-16T10:47:46.526+02:00  INFO 47343 --- [backend] [  restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 522 ms
+2024-04-16T10:47:46.559+02:00  INFO 47343 --- [backend] [  restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Starting...
+2024-04-16T10:47:46.618+02:00  INFO 47343 --- [backend] [  restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-3 - Added connection org.postgresql.jdbc.PgConnection@57e8be20
+2024-04-16T10:47:46.618+02:00  INFO 47343 --- [backend] [  restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Start completed.
+2024-04-16T10:47:46.641+02:00  INFO 47343 --- [backend] [  restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-04-16T10:47:46.643+02:00  INFO 47343 --- [backend] [  restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-04-16T10:47:46.647+02:00  INFO 47343 --- [backend] [  restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-04-16T10:47:46.847+02:00  INFO 47343 --- [backend] [  restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-04-16T10:47:47.106+02:00  INFO 47343 --- [backend] [  restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-04-16T10:47:47.394+02:00 DEBUG 47343 --- [backend] [  restartedMain] o.s.b.w.s.ServletContextInitializerBeans : Mapping filters: springSecurityFilterChain urls=[/*] order=-100, characterEncodingFilter urls=[/*] order=-2147483648, formContentFilter urls=[/*] order=-9900, requestContextFilter urls=[/*] order=-105, JWTFilter urls=[/*] order=2147483647
+2024-04-16T10:47:47.394+02:00 DEBUG 47343 --- [backend] [  restartedMain] o.s.b.w.s.ServletContextInitializerBeans : Mapping servlets: dispatcherServlet urls=[/]
+2024-04-16T10:47:48.197+02:00 DEBUG 47343 --- [backend] [  restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 35 mappings in 'requestMappingHandlerMapping'
+2024-04-16T10:47:48.286+02:00 DEBUG 47343 --- [backend] [  restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**, /swagger-ui*/*swagger-initializer.js, /swagger-ui*/**] in 'resourceHandlerMapping'
+2024-04-16T10:47:48.563+02:00  INFO 47343 --- [backend] [  restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@4a1c6dd1, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@18d9515f, org.springframework.security.web.context.SecurityContextHolderFilter@c1c86a6, org.springframework.security.web.header.HeaderWriterFilter@38bf5c1b, org.springframework.web.filter.CorsFilter@4c4128d6, org.springframework.security.web.authentication.logout.LogoutFilter@50c05aef, org.djvmil.em.backend.security.JWTFilter@12d6be44, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@11efb7d4, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@53726e76, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@56972b8b, org.springframework.security.web.session.SessionManagementFilter@182e76c9, org.springframework.security.web.access.ExceptionTranslationFilter@40dbb6bf, org.springframework.security.web.access.intercept.AuthorizationFilter@7cbcce03]
+2024-04-16T10:47:48.628+02:00 DEBUG 47343 --- [backend] [  restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2024-04-16T10:47:48.640+02:00 DEBUG 47343 --- [backend] [  restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 4 @ExceptionHandler, 1 ResponseBodyAdvice
+2024-04-16T10:47:48.668+02:00 DEBUG 47343 --- [backend] [  restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 4 @ExceptionHandler, 0 ResponseBodyAdvice
+2024-04-16T10:47:48.918+02:00  INFO 47343 --- [backend] [  restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-04-16T10:47:48.934+02:00  INFO 47343 --- [backend] [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8989 (http) with context path '/em'
+2024-04-16T10:47:48.941+02:00  INFO 47343 --- [backend] [  restartedMain] o.djvmil.em.backend.BackendApplication   : Started BackendApplication in 3.012 seconds (process running for 248.87)
+2024-04-16T10:47:48.943+02:00  INFO 47343 --- [backend] [  restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2024-04-16T10:48:03.590+02:00  INFO 47343 --- [backend] [   File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2024-04-16T10:48:03.661+02:00  INFO 47343 --- [backend] [      Thread-11] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-04-16T10:48:03.663+02:00  INFO 47343 --- [backend] [      Thread-11] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown initiated...
+2024-04-16T10:48:03.666+02:00  INFO 47343 --- [backend] [      Thread-11] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown completed.
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.2.3)
+
+2024-04-16T10:48:03.820+02:00  INFO 47343 --- [backend] [  restartedMain] o.djvmil.em.backend.BackendApplication   : Starting BackendApplication using Java 17 with PID 47343 (/Users/moustaphas.dieme/Desktop/EntretienMentor/EntretienMentorBackend/target/classes started by moustaphas.dieme in /Users/moustaphas.dieme/Desktop/EntretienMentor/EntretienMentorBackend)
+2024-04-16T10:48:03.821+02:00  INFO 47343 --- [backend] [  restartedMain] o.djvmil.em.backend.BackendApplication   : No active profile set, falling back to 1 default profile: "default"
+2024-04-16T10:48:04.407+02:00  INFO 47343 --- [backend] [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-04-16T10:48:04.516+02:00  INFO 47343 --- [backend] [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 108 ms. Found 14 JPA repository interfaces.
+2024-04-16T10:48:04.771+02:00  INFO 47343 --- [backend] [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8989 (http)
+2024-04-16T10:48:04.771+02:00  INFO 47343 --- [backend] [  restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-04-16T10:48:04.772+02:00  INFO 47343 --- [backend] [  restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-04-16T10:48:04.792+02:00  INFO 47343 --- [backend] [  restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/em]     : Initializing Spring embedded WebApplicationContext
+2024-04-16T10:48:04.792+02:00  INFO 47343 --- [backend] [  restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 969 ms
+2024-04-16T10:48:04.858+02:00  INFO 47343 --- [backend] [  restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Starting...
+2024-04-16T10:48:04.871+02:00  INFO 47343 --- [backend] [  restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-4 - Added connection org.postgresql.jdbc.PgConnection@6cd72517
+2024-04-16T10:48:04.871+02:00  INFO 47343 --- [backend] [  restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Start completed.
+2024-04-16T10:48:04.905+02:00  INFO 47343 --- [backend] [  restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-04-16T10:48:04.907+02:00  INFO 47343 --- [backend] [  restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-04-16T10:48:04.912+02:00  INFO 47343 --- [backend] [  restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-04-16T10:48:05.109+02:00  INFO 47343 --- [backend] [  restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-04-16T10:48:05.289+02:00  INFO 47343 --- [backend] [  restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-04-16T10:48:05.418+02:00 DEBUG 47343 --- [backend] [  restartedMain] o.s.b.w.s.ServletContextInitializerBeans : Mapping filters: springSecurityFilterChain urls=[/*] order=-100, characterEncodingFilter urls=[/*] order=-2147483648, formContentFilter urls=[/*] order=-9900, requestContextFilter urls=[/*] order=-105, JWTFilter urls=[/*] order=2147483647
+2024-04-16T10:48:05.419+02:00 DEBUG 47343 --- [backend] [  restartedMain] o.s.b.w.s.ServletContextInitializerBeans : Mapping servlets: dispatcherServlet urls=[/]
+2024-04-16T10:48:05.929+02:00 DEBUG 47343 --- [backend] [  restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 35 mappings in 'requestMappingHandlerMapping'
+2024-04-16T10:48:05.996+02:00 DEBUG 47343 --- [backend] [  restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**, /swagger-ui*/*swagger-initializer.js, /swagger-ui*/**] in 'resourceHandlerMapping'
+2024-04-16T10:48:06.068+02:00  INFO 47343 --- [backend] [  restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@621bc9ef, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@2ddc38ef, org.springframework.security.web.context.SecurityContextHolderFilter@3bc5458a, org.springframework.security.web.header.HeaderWriterFilter@14217fc2, org.springframework.web.filter.CorsFilter@5e4086f1, org.springframework.security.web.authentication.logout.LogoutFilter@61a5d5a6, org.djvmil.em.backend.security.JWTFilter@7bbaea6e, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@1cd9140f, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@319a739, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@11c1669a, org.springframework.security.web.session.SessionManagementFilter@194d5f4f, org.springframework.security.web.access.ExceptionTranslationFilter@1857ed90, org.springframework.security.web.access.intercept.AuthorizationFilter@7be69506]
+2024-04-16T10:48:06.169+02:00 DEBUG 47343 --- [backend] [  restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2024-04-16T10:48:06.183+02:00 DEBUG 47343 --- [backend] [  restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 4 @ExceptionHandler, 1 ResponseBodyAdvice
+2024-04-16T10:48:06.208+02:00 DEBUG 47343 --- [backend] [  restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 4 @ExceptionHandler, 0 ResponseBodyAdvice
+2024-04-16T10:48:06.467+02:00  INFO 47343 --- [backend] [  restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-04-16T10:48:06.485+02:00  INFO 47343 --- [backend] [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8989 (http) with context path '/em'
+2024-04-16T10:48:06.494+02:00  INFO 47343 --- [backend] [  restartedMain] o.djvmil.em.backend.BackendApplication   : Started BackendApplication in 2.703 seconds (process running for 266.423)
+2024-04-16T10:48:06.496+02:00  INFO 47343 --- [backend] [  restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2024-04-16T10:50:30.267+02:00  INFO 47343 --- [backend] [   File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2024-04-16T10:50:30.351+02:00  INFO 47343 --- [backend] [      Thread-15] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-04-16T10:50:30.370+02:00  INFO 47343 --- [backend] [      Thread-15] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Shutdown initiated...
+2024-04-16T10:50:30.386+02:00  INFO 47343 --- [backend] [      Thread-15] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Shutdown completed.
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.2.3)
+
+2024-04-16T10:50:30.875+02:00  INFO 47343 --- [backend] [  restartedMain] o.djvmil.em.backend.BackendApplication   : Starting BackendApplication using Java 17 with PID 47343 (/Users/moustaphas.dieme/Desktop/EntretienMentor/EntretienMentorBackend/target/classes started by moustaphas.dieme in /Users/moustaphas.dieme/Desktop/EntretienMentor/EntretienMentorBackend)
+2024-04-16T10:50:30.875+02:00  INFO 47343 --- [backend] [  restartedMain] o.djvmil.em.backend.BackendApplication   : No active profile set, falling back to 1 default profile: "default"
+2024-04-16T10:50:31.194+02:00  INFO 47343 --- [backend] [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-04-16T10:50:31.226+02:00  INFO 47343 --- [backend] [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 32 ms. Found 14 JPA repository interfaces.
+2024-04-16T10:50:31.442+02:00  INFO 47343 --- [backend] [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8989 (http)
+2024-04-16T10:50:31.443+02:00  INFO 47343 --- [backend] [  restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-04-16T10:50:31.443+02:00  INFO 47343 --- [backend] [  restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-04-16T10:50:31.460+02:00  INFO 47343 --- [backend] [  restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/em]     : Initializing Spring embedded WebApplicationContext
+2024-04-16T10:50:31.460+02:00  INFO 47343 --- [backend] [  restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 584 ms
+2024-04-16T10:50:31.507+02:00  INFO 47343 --- [backend] [  restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Starting...
+2024-04-16T10:50:31.516+02:00  INFO 47343 --- [backend] [  restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-5 - Added connection org.postgresql.jdbc.PgConnection@5b689459
+2024-04-16T10:50:31.516+02:00  INFO 47343 --- [backend] [  restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Start completed.
+2024-04-16T10:50:31.535+02:00  INFO 47343 --- [backend] [  restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-04-16T10:50:31.537+02:00  INFO 47343 --- [backend] [  restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-04-16T10:50:31.541+02:00  INFO 47343 --- [backend] [  restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-04-16T10:50:31.750+02:00  INFO 47343 --- [backend] [  restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-04-16T10:50:31.901+02:00  INFO 47343 --- [backend] [  restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-04-16T10:50:32.073+02:00 DEBUG 47343 --- [backend] [  restartedMain] o.s.b.w.s.ServletContextInitializerBeans : Mapping filters: springSecurityFilterChain urls=[/*] order=-100, characterEncodingFilter urls=[/*] order=-2147483648, formContentFilter urls=[/*] order=-9900, requestContextFilter urls=[/*] order=-105, JWTFilter urls=[/*] order=2147483647
+2024-04-16T10:50:32.073+02:00 DEBUG 47343 --- [backend] [  restartedMain] o.s.b.w.s.ServletContextInitializerBeans : Mapping servlets: dispatcherServlet urls=[/]
+2024-04-16T10:50:32.548+02:00 DEBUG 47343 --- [backend] [  restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 35 mappings in 'requestMappingHandlerMapping'
+2024-04-16T10:50:32.605+02:00 DEBUG 47343 --- [backend] [  restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**, /swagger-ui*/*swagger-initializer.js, /swagger-ui*/**] in 'resourceHandlerMapping'
+2024-04-16T10:50:32.657+02:00  INFO 47343 --- [backend] [  restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@55468810, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@75ded737, org.springframework.security.web.context.SecurityContextHolderFilter@4ec20fc3, org.springframework.security.web.header.HeaderWriterFilter@1371d1f6, org.springframework.web.filter.CorsFilter@177a3001, org.springframework.security.web.authentication.logout.LogoutFilter@3f53fd62, org.djvmil.em.backend.security.JWTFilter@6a1305d6, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5602193, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1883bea8, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@6ccd4645, org.springframework.security.web.session.SessionManagementFilter@21ab0c04, org.springframework.security.web.access.ExceptionTranslationFilter@341feed6, org.springframework.security.web.access.intercept.AuthorizationFilter@3e48a093]
+2024-04-16T10:50:32.698+02:00 DEBUG 47343 --- [backend] [  restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2024-04-16T10:50:32.707+02:00 DEBUG 47343 --- [backend] [  restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 4 @ExceptionHandler, 1 ResponseBodyAdvice
+2024-04-16T10:50:32.720+02:00 DEBUG 47343 --- [backend] [  restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 4 @ExceptionHandler, 0 ResponseBodyAdvice
+2024-04-16T10:50:32.847+02:00  INFO 47343 --- [backend] [  restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-04-16T10:50:32.859+02:00  INFO 47343 --- [backend] [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8989 (http) with context path '/em'
+2024-04-16T10:50:32.865+02:00  INFO 47343 --- [backend] [  restartedMain] o.djvmil.em.backend.BackendApplication   : Started BackendApplication in 2.02 seconds (process running for 412.796)
+2024-04-16T10:50:32.867+02:00  INFO 47343 --- [backend] [  restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2024-04-16T10:50:38.333+02:00  INFO 47343 --- [backend] [   File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2024-04-16T10:50:38.341+02:00  INFO 47343 --- [backend] [      Thread-19] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-04-16T10:50:38.342+02:00  INFO 47343 --- [backend] [      Thread-19] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Shutdown initiated...
+2024-04-16T10:50:38.343+02:00  INFO 47343 --- [backend] [      Thread-19] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Shutdown completed.
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.2.3)
+
+2024-04-16T10:50:38.430+02:00  INFO 47343 --- [backend] [  restartedMain] o.djvmil.em.backend.BackendApplication   : Starting BackendApplication using Java 17 with PID 47343 (/Users/moustaphas.dieme/Desktop/EntretienMentor/EntretienMentorBackend/target/classes started by moustaphas.dieme in /Users/moustaphas.dieme/Desktop/EntretienMentor/EntretienMentorBackend)
+2024-04-16T10:50:38.430+02:00  INFO 47343 --- [backend] [  restartedMain] o.djvmil.em.backend.BackendApplication   : No active profile set, falling back to 1 default profile: "default"
+2024-04-16T10:50:38.589+02:00  INFO 47343 --- [backend] [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-04-16T10:50:38.620+02:00  INFO 47343 --- [backend] [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 31 ms. Found 14 JPA repository interfaces.
+2024-04-16T10:50:38.792+02:00  INFO 47343 --- [backend] [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8989 (http)
+2024-04-16T10:50:38.793+02:00  INFO 47343 --- [backend] [  restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-04-16T10:50:38.793+02:00  INFO 47343 --- [backend] [  restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-04-16T10:50:38.806+02:00  INFO 47343 --- [backend] [  restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/em]     : Initializing Spring embedded WebApplicationContext
+2024-04-16T10:50:38.807+02:00  INFO 47343 --- [backend] [  restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 376 ms
+2024-04-16T10:50:38.854+02:00  INFO 47343 --- [backend] [  restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Starting...
+2024-04-16T10:50:38.860+02:00  INFO 47343 --- [backend] [  restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-6 - Added connection org.postgresql.jdbc.PgConnection@7296ea3
+2024-04-16T10:50:38.860+02:00  INFO 47343 --- [backend] [  restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Start completed.
+2024-04-16T10:50:38.886+02:00  INFO 47343 --- [backend] [  restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-04-16T10:50:38.888+02:00  INFO 47343 --- [backend] [  restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-04-16T10:50:38.892+02:00  INFO 47343 --- [backend] [  restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-04-16T10:50:39.089+02:00  INFO 47343 --- [backend] [  restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-04-16T10:50:39.280+02:00  INFO 47343 --- [backend] [  restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-04-16T10:50:39.409+02:00 DEBUG 47343 --- [backend] [  restartedMain] o.s.b.w.s.ServletContextInitializerBeans : Mapping filters: springSecurityFilterChain urls=[/*] order=-100, characterEncodingFilter urls=[/*] order=-2147483648, formContentFilter urls=[/*] order=-9900, requestContextFilter urls=[/*] order=-105, JWTFilter urls=[/*] order=2147483647
+2024-04-16T10:50:39.410+02:00 DEBUG 47343 --- [backend] [  restartedMain] o.s.b.w.s.ServletContextInitializerBeans : Mapping servlets: dispatcherServlet urls=[/]
+2024-04-16T10:50:39.887+02:00 DEBUG 47343 --- [backend] [  restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 35 mappings in 'requestMappingHandlerMapping'
+2024-04-16T10:50:39.941+02:00 DEBUG 47343 --- [backend] [  restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**, /swagger-ui*/*swagger-initializer.js, /swagger-ui*/**] in 'resourceHandlerMapping'
+2024-04-16T10:50:39.993+02:00  INFO 47343 --- [backend] [  restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@4208a00c, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@24c948ef, org.springframework.security.web.context.SecurityContextHolderFilter@6c04f8c0, org.springframework.security.web.header.HeaderWriterFilter@769ab3b6, org.springframework.web.filter.CorsFilter@6a7e336f, org.springframework.security.web.authentication.logout.LogoutFilter@25d86fe5, org.djvmil.em.backend.security.JWTFilter@2c0ef260, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@27b078b1, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@41468f2, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@26e61f61, org.springframework.security.web.session.SessionManagementFilter@6cd0cfe8, org.springframework.security.web.access.ExceptionTranslationFilter@342fea03, org.springframework.security.web.access.intercept.AuthorizationFilter@267d4524]
+2024-04-16T10:50:40.040+02:00 DEBUG 47343 --- [backend] [  restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2024-04-16T10:50:40.049+02:00 DEBUG 47343 --- [backend] [  restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 4 @ExceptionHandler, 1 ResponseBodyAdvice
+2024-04-16T10:50:40.063+02:00 DEBUG 47343 --- [backend] [  restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 4 @ExceptionHandler, 0 ResponseBodyAdvice
+2024-04-16T10:50:40.225+02:00  INFO 47343 --- [backend] [  restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-04-16T10:50:40.241+02:00  INFO 47343 --- [backend] [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8989 (http) with context path '/em'
+2024-04-16T10:50:40.248+02:00  INFO 47343 --- [backend] [  restartedMain] o.djvmil.em.backend.BackendApplication   : Started BackendApplication in 1.836 seconds (process running for 420.179)
+2024-04-16T10:50:40.249+02:00  INFO 47343 --- [backend] [  restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2024-04-16T10:50:45.720+02:00  INFO 47343 --- [backend] [   File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2024-04-16T10:50:45.728+02:00  INFO 47343 --- [backend] [      Thread-23] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-04-16T10:50:45.729+02:00  INFO 47343 --- [backend] [      Thread-23] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Shutdown initiated...
+2024-04-16T10:50:45.730+02:00  INFO 47343 --- [backend] [      Thread-23] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Shutdown completed.
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.2.3)
+
+2024-04-16T10:50:45.817+02:00  INFO 47343 --- [backend] [  restartedMain] o.djvmil.em.backend.BackendApplication   : Starting BackendApplication using Java 17 with PID 47343 (/Users/moustaphas.dieme/Desktop/EntretienMentor/EntretienMentorBackend/target/classes started by moustaphas.dieme in /Users/moustaphas.dieme/Desktop/EntretienMentor/EntretienMentorBackend)
+2024-04-16T10:50:45.817+02:00  INFO 47343 --- [backend] [  restartedMain] o.djvmil.em.backend.BackendApplication   : No active profile set, falling back to 1 default profile: "default"
+2024-04-16T10:50:46.017+02:00  INFO 47343 --- [backend] [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-04-16T10:50:46.041+02:00  INFO 47343 --- [backend] [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 23 ms. Found 14 JPA repository interfaces.
+2024-04-16T10:50:46.182+02:00  INFO 47343 --- [backend] [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8989 (http)
+2024-04-16T10:50:46.183+02:00  INFO 47343 --- [backend] [  restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-04-16T10:50:46.183+02:00  INFO 47343 --- [backend] [  restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-04-16T10:50:46.195+02:00  INFO 47343 --- [backend] [  restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/em]     : Initializing Spring embedded WebApplicationContext
+2024-04-16T10:50:46.196+02:00  INFO 47343 --- [backend] [  restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 378 ms
+2024-04-16T10:50:46.235+02:00  INFO 47343 --- [backend] [  restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-7 - Starting...
+2024-04-16T10:50:46.241+02:00  INFO 47343 --- [backend] [  restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-7 - Added connection org.postgresql.jdbc.PgConnection@245332db
+2024-04-16T10:50:46.241+02:00  INFO 47343 --- [backend] [  restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-7 - Start completed.
+2024-04-16T10:50:46.259+02:00  INFO 47343 --- [backend] [  restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-04-16T10:50:46.261+02:00  INFO 47343 --- [backend] [  restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-04-16T10:50:46.264+02:00  INFO 47343 --- [backend] [  restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-04-16T10:50:46.414+02:00  INFO 47343 --- [backend] [  restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-04-16T10:50:46.583+02:00  INFO 47343 --- [backend] [  restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-04-16T10:50:46.698+02:00 DEBUG 47343 --- [backend] [  restartedMain] o.s.b.w.s.ServletContextInitializerBeans : Mapping filters: springSecurityFilterChain urls=[/*] order=-100, characterEncodingFilter urls=[/*] order=-2147483648, formContentFilter urls=[/*] order=-9900, requestContextFilter urls=[/*] order=-105, JWTFilter urls=[/*] order=2147483647
+2024-04-16T10:50:46.698+02:00 DEBUG 47343 --- [backend] [  restartedMain] o.s.b.w.s.ServletContextInitializerBeans : Mapping servlets: dispatcherServlet urls=[/]
+2024-04-16T10:50:47.118+02:00 DEBUG 47343 --- [backend] [  restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 35 mappings in 'requestMappingHandlerMapping'
+2024-04-16T10:50:47.168+02:00 DEBUG 47343 --- [backend] [  restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**, /swagger-ui*/*swagger-initializer.js, /swagger-ui*/**] in 'resourceHandlerMapping'
+2024-04-16T10:50:47.223+02:00  INFO 47343 --- [backend] [  restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@619e3889, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@5408f111, org.springframework.security.web.context.SecurityContextHolderFilter@23f236c7, org.springframework.security.web.header.HeaderWriterFilter@53ea8602, org.springframework.web.filter.CorsFilter@3ad6b674, org.springframework.security.web.authentication.logout.LogoutFilter@39518e4d, org.djvmil.em.backend.security.JWTFilter@d9a0e8d, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@26821f39, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@215f577d, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@75c750b9, org.springframework.security.web.session.SessionManagementFilter@20714472, org.springframework.security.web.access.ExceptionTranslationFilter@19b398d8, org.springframework.security.web.access.intercept.AuthorizationFilter@54237fa8]
+2024-04-16T10:50:47.266+02:00 DEBUG 47343 --- [backend] [  restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2024-04-16T10:50:47.275+02:00 DEBUG 47343 --- [backend] [  restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 4 @ExceptionHandler, 1 ResponseBodyAdvice
+2024-04-16T10:50:47.290+02:00 DEBUG 47343 --- [backend] [  restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 4 @ExceptionHandler, 0 ResponseBodyAdvice
+2024-04-16T10:50:47.428+02:00  INFO 47343 --- [backend] [  restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-04-16T10:50:47.439+02:00  INFO 47343 --- [backend] [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8989 (http) with context path '/em'
+2024-04-16T10:50:47.444+02:00  INFO 47343 --- [backend] [  restartedMain] o.djvmil.em.backend.BackendApplication   : Started BackendApplication in 1.646 seconds (process running for 427.376)
+2024-04-16T10:50:47.446+02:00  INFO 47343 --- [backend] [  restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2024-04-16T10:51:49.768+02:00  INFO 47343 --- [backend] [   File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2024-04-16T10:51:49.777+02:00  INFO 47343 --- [backend] [      Thread-27] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-04-16T10:51:49.777+02:00  INFO 47343 --- [backend] [      Thread-27] com.zaxxer.hikari.HikariDataSource       : HikariPool-7 - Shutdown initiated...
+2024-04-16T10:51:49.779+02:00  INFO 47343 --- [backend] [      Thread-27] com.zaxxer.hikari.HikariDataSource       : HikariPool-7 - Shutdown completed.
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.2.3)
+
+2024-04-16T10:51:49.896+02:00  INFO 47343 --- [backend] [  restartedMain] o.djvmil.em.backend.BackendApplication   : Starting BackendApplication using Java 17 with PID 47343 (/Users/moustaphas.dieme/Desktop/EntretienMentor/EntretienMentorBackend/target/classes started by moustaphas.dieme in /Users/moustaphas.dieme/Desktop/EntretienMentor/EntretienMentorBackend)
+2024-04-16T10:51:49.896+02:00  INFO 47343 --- [backend] [  restartedMain] o.djvmil.em.backend.BackendApplication   : No active profile set, falling back to 1 default profile: "default"
+2024-04-16T10:51:50.165+02:00  INFO 47343 --- [backend] [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-04-16T10:51:50.190+02:00  INFO 47343 --- [backend] [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 24 ms. Found 14 JPA repository interfaces.
+2024-04-16T10:51:50.336+02:00  INFO 47343 --- [backend] [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8989 (http)
+2024-04-16T10:51:50.337+02:00  INFO 47343 --- [backend] [  restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-04-16T10:51:50.337+02:00  INFO 47343 --- [backend] [  restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-04-16T10:51:50.353+02:00  INFO 47343 --- [backend] [  restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/em]     : Initializing Spring embedded WebApplicationContext
+2024-04-16T10:51:50.353+02:00  INFO 47343 --- [backend] [  restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 455 ms
+2024-04-16T10:51:50.387+02:00  INFO 47343 --- [backend] [  restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-8 - Starting...
+2024-04-16T10:51:50.404+02:00  INFO 47343 --- [backend] [  restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-8 - Added connection org.postgresql.jdbc.PgConnection@2f1aa8c8
+2024-04-16T10:51:50.405+02:00  INFO 47343 --- [backend] [  restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-8 - Start completed.
+2024-04-16T10:51:50.429+02:00  INFO 47343 --- [backend] [  restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-04-16T10:51:50.431+02:00  INFO 47343 --- [backend] [  restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-04-16T10:51:50.435+02:00  INFO 47343 --- [backend] [  restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-04-16T10:51:50.612+02:00  INFO 47343 --- [backend] [  restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-04-16T10:51:50.765+02:00  INFO 47343 --- [backend] [  restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-04-16T10:51:50.982+02:00 DEBUG 47343 --- [backend] [  restartedMain] o.s.b.w.s.ServletContextInitializerBeans : Mapping filters: springSecurityFilterChain urls=[/*] order=-100, characterEncodingFilter urls=[/*] order=-2147483648, formContentFilter urls=[/*] order=-9900, requestContextFilter urls=[/*] order=-105, JWTFilter urls=[/*] order=2147483647
+2024-04-16T10:51:50.991+02:00 DEBUG 47343 --- [backend] [  restartedMain] o.s.b.w.s.ServletContextInitializerBeans : Mapping servlets: dispatcherServlet urls=[/]
+2024-04-16T10:51:51.782+02:00 DEBUG 47343 --- [backend] [  restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 35 mappings in 'requestMappingHandlerMapping'
+2024-04-16T10:51:51.846+02:00 DEBUG 47343 --- [backend] [  restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**, /swagger-ui*/*swagger-initializer.js, /swagger-ui*/**] in 'resourceHandlerMapping'
+2024-04-16T10:51:51.904+02:00  INFO 47343 --- [backend] [  restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@5c658a95, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@113ba659, org.springframework.security.web.context.SecurityContextHolderFilter@3b0608e1, org.springframework.security.web.header.HeaderWriterFilter@38dc137d, org.springframework.web.filter.CorsFilter@37190484, org.springframework.security.web.authentication.logout.LogoutFilter@6d3414f4, org.djvmil.em.backend.security.JWTFilter@53cb697b, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@2b7ac2ae, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@73e56b47, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@76cb5be3, org.springframework.security.web.session.SessionManagementFilter@745c3a53, org.springframework.security.web.access.ExceptionTranslationFilter@1260419e, org.springframework.security.web.access.intercept.AuthorizationFilter@48c12a5e]
+2024-04-16T10:51:51.953+02:00 DEBUG 47343 --- [backend] [  restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2024-04-16T10:51:51.962+02:00 DEBUG 47343 --- [backend] [  restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 4 @ExceptionHandler, 1 ResponseBodyAdvice
+2024-04-16T10:51:51.975+02:00 DEBUG 47343 --- [backend] [  restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 4 @ExceptionHandler, 0 ResponseBodyAdvice
+2024-04-16T10:51:52.111+02:00  INFO 47343 --- [backend] [  restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-04-16T10:51:52.121+02:00  INFO 47343 --- [backend] [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8989 (http) with context path '/em'
+2024-04-16T10:51:52.127+02:00  INFO 47343 --- [backend] [  restartedMain] o.djvmil.em.backend.BackendApplication   : Started BackendApplication in 2.257 seconds (process running for 492.06)
+2024-04-16T10:51:52.128+02:00  INFO 47343 --- [backend] [  restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2024-04-16T10:52:11.795+02:00  INFO 47343 --- [backend] [   File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2024-04-16T10:52:11.801+02:00  INFO 47343 --- [backend] [      Thread-31] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-04-16T10:52:11.802+02:00  INFO 47343 --- [backend] [      Thread-31] com.zaxxer.hikari.HikariDataSource       : HikariPool-8 - Shutdown initiated...
+2024-04-16T10:52:11.803+02:00  INFO 47343 --- [backend] [      Thread-31] com.zaxxer.hikari.HikariDataSource       : HikariPool-8 - Shutdown completed.
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.2.3)
+
+2024-04-16T10:52:12.004+02:00  INFO 47343 --- [backend] [  restartedMain] o.djvmil.em.backend.BackendApplication   : Starting BackendApplication using Java 17 with PID 47343 (/Users/moustaphas.dieme/Desktop/EntretienMentor/EntretienMentorBackend/target/classes started by moustaphas.dieme in /Users/moustaphas.dieme/Desktop/EntretienMentor/EntretienMentorBackend)
+2024-04-16T10:52:12.004+02:00  INFO 47343 --- [backend] [  restartedMain] o.djvmil.em.backend.BackendApplication   : No active profile set, falling back to 1 default profile: "default"
+2024-04-16T10:52:12.335+02:00  INFO 47343 --- [backend] [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-04-16T10:52:12.356+02:00  INFO 47343 --- [backend] [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 21 ms. Found 14 JPA repository interfaces.
+2024-04-16T10:52:12.500+02:00  INFO 47343 --- [backend] [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8989 (http)
+2024-04-16T10:52:12.500+02:00  INFO 47343 --- [backend] [  restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-04-16T10:52:12.501+02:00  INFO 47343 --- [backend] [  restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-04-16T10:52:12.514+02:00  INFO 47343 --- [backend] [  restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/em]     : Initializing Spring embedded WebApplicationContext
+2024-04-16T10:52:12.514+02:00  INFO 47343 --- [backend] [  restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 508 ms
+2024-04-16T10:52:12.543+02:00  INFO 47343 --- [backend] [  restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-9 - Starting...
+2024-04-16T10:52:12.579+02:00  INFO 47343 --- [backend] [  restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-9 - Added connection org.postgresql.jdbc.PgConnection@e649ba3
+2024-04-16T10:52:12.580+02:00  INFO 47343 --- [backend] [  restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-9 - Start completed.
+2024-04-16T10:52:12.602+02:00  INFO 47343 --- [backend] [  restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-04-16T10:52:12.604+02:00  INFO 47343 --- [backend] [  restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-04-16T10:52:12.607+02:00  INFO 47343 --- [backend] [  restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-04-16T10:52:12.752+02:00  INFO 47343 --- [backend] [  restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-04-16T10:52:12.927+02:00  INFO 47343 --- [backend] [  restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-04-16T10:52:13.077+02:00 DEBUG 47343 --- [backend] [  restartedMain] o.s.b.w.s.ServletContextInitializerBeans : Mapping filters: springSecurityFilterChain urls=[/*] order=-100, characterEncodingFilter urls=[/*] order=-2147483648, formContentFilter urls=[/*] order=-9900, requestContextFilter urls=[/*] order=-105, JWTFilter urls=[/*] order=2147483647
+2024-04-16T10:52:13.077+02:00 DEBUG 47343 --- [backend] [  restartedMain] o.s.b.w.s.ServletContextInitializerBeans : Mapping servlets: dispatcherServlet urls=[/]
+2024-04-16T10:52:13.517+02:00 DEBUG 47343 --- [backend] [  restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 35 mappings in 'requestMappingHandlerMapping'
+2024-04-16T10:52:13.564+02:00 DEBUG 47343 --- [backend] [  restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**, /swagger-ui*/*swagger-initializer.js, /swagger-ui*/**] in 'resourceHandlerMapping'
+2024-04-16T10:52:13.603+02:00  INFO 47343 --- [backend] [  restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@723ebd81, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@5555a270, org.springframework.security.web.context.SecurityContextHolderFilter@13844de2, org.springframework.security.web.header.HeaderWriterFilter@3acf7861, org.springframework.web.filter.CorsFilter@44d11d2d, org.springframework.security.web.authentication.logout.LogoutFilter@1be7856b, org.djvmil.em.backend.security.JWTFilter@3058a648, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@14c45848, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@558936c1, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@51509db9, org.springframework.security.web.session.SessionManagementFilter@69c2c122, org.springframework.security.web.access.ExceptionTranslationFilter@1bc3909a, org.springframework.security.web.access.intercept.AuthorizationFilter@31f48c12]
+2024-04-16T10:52:13.639+02:00 DEBUG 47343 --- [backend] [  restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2024-04-16T10:52:13.647+02:00 DEBUG 47343 --- [backend] [  restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 4 @ExceptionHandler, 1 ResponseBodyAdvice
+2024-04-16T10:52:13.659+02:00 DEBUG 47343 --- [backend] [  restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 4 @ExceptionHandler, 0 ResponseBodyAdvice
+2024-04-16T10:52:13.791+02:00  INFO 47343 --- [backend] [  restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-04-16T10:52:13.803+02:00  INFO 47343 --- [backend] [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8989 (http) with context path '/em'
+2024-04-16T10:52:13.808+02:00  INFO 47343 --- [backend] [  restartedMain] o.djvmil.em.backend.BackendApplication   : Started BackendApplication in 1.841 seconds (process running for 513.741)
+2024-04-16T10:52:13.809+02:00  INFO 47343 --- [backend] [  restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2024-04-16T10:52:35.560+02:00  INFO 47343 --- [backend] [   File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2024-04-16T10:52:35.569+02:00  INFO 47343 --- [backend] [      Thread-35] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-04-16T10:52:35.570+02:00  INFO 47343 --- [backend] [      Thread-35] com.zaxxer.hikari.HikariDataSource       : HikariPool-9 - Shutdown initiated...
+2024-04-16T10:52:35.571+02:00  INFO 47343 --- [backend] [      Thread-35] com.zaxxer.hikari.HikariDataSource       : HikariPool-9 - Shutdown completed.
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.2.3)
+
+2024-04-16T10:52:35.662+02:00  INFO 47343 --- [backend] [  restartedMain] o.djvmil.em.backend.BackendApplication   : Starting BackendApplication using Java 17 with PID 47343 (/Users/moustaphas.dieme/Desktop/EntretienMentor/EntretienMentorBackend/target/classes started by moustaphas.dieme in /Users/moustaphas.dieme/Desktop/EntretienMentor/EntretienMentorBackend)
+2024-04-16T10:52:35.662+02:00  INFO 47343 --- [backend] [  restartedMain] o.djvmil.em.backend.BackendApplication   : No active profile set, falling back to 1 default profile: "default"
+2024-04-16T10:52:35.907+02:00  INFO 47343 --- [backend] [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-04-16T10:52:35.930+02:00  INFO 47343 --- [backend] [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 22 ms. Found 14 JPA repository interfaces.
+2024-04-16T10:52:36.078+02:00  INFO 47343 --- [backend] [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8989 (http)
+2024-04-16T10:52:36.079+02:00  INFO 47343 --- [backend] [  restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-04-16T10:52:36.079+02:00  INFO 47343 --- [backend] [  restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-04-16T10:52:36.093+02:00  INFO 47343 --- [backend] [  restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/em]     : Initializing Spring embedded WebApplicationContext
+2024-04-16T10:52:36.093+02:00  INFO 47343 --- [backend] [  restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 430 ms
+2024-04-16T10:52:36.123+02:00  INFO 47343 --- [backend] [  restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-10 - Starting...
+2024-04-16T10:52:36.129+02:00  INFO 47343 --- [backend] [  restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-10 - Added connection org.postgresql.jdbc.PgConnection@5ea66f66
+2024-04-16T10:52:36.129+02:00  INFO 47343 --- [backend] [  restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-10 - Start completed.
+2024-04-16T10:52:36.148+02:00  INFO 47343 --- [backend] [  restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-04-16T10:52:36.150+02:00  INFO 47343 --- [backend] [  restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-04-16T10:52:36.158+02:00  INFO 47343 --- [backend] [  restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-04-16T10:52:36.292+02:00  INFO 47343 --- [backend] [  restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-04-16T10:52:36.420+02:00  INFO 47343 --- [backend] [  restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-04-16T10:52:36.528+02:00 DEBUG 47343 --- [backend] [  restartedMain] o.s.b.w.s.ServletContextInitializerBeans : Mapping filters: springSecurityFilterChain urls=[/*] order=-100, characterEncodingFilter urls=[/*] order=-2147483648, formContentFilter urls=[/*] order=-9900, requestContextFilter urls=[/*] order=-105, JWTFilter urls=[/*] order=2147483647
+2024-04-16T10:52:36.528+02:00 DEBUG 47343 --- [backend] [  restartedMain] o.s.b.w.s.ServletContextInitializerBeans : Mapping servlets: dispatcherServlet urls=[/]
+2024-04-16T10:52:36.922+02:00 DEBUG 47343 --- [backend] [  restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 35 mappings in 'requestMappingHandlerMapping'
+2024-04-16T10:52:36.971+02:00 DEBUG 47343 --- [backend] [  restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**, /swagger-ui*/*swagger-initializer.js, /swagger-ui*/**] in 'resourceHandlerMapping'
+2024-04-16T10:52:37.017+02:00  INFO 47343 --- [backend] [  restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@41515d28, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@5b9f98db, org.springframework.security.web.context.SecurityContextHolderFilter@3870e6c9, org.springframework.security.web.header.HeaderWriterFilter@651c0a38, org.springframework.web.filter.CorsFilter@655b672c, org.springframework.security.web.authentication.logout.LogoutFilter@6a1e0950, org.djvmil.em.backend.security.JWTFilter@4e9aa4b1, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@2811c4f5, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@2d595605, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@48f5a8b7, org.springframework.security.web.session.SessionManagementFilter@5df4a65b, org.springframework.security.web.access.ExceptionTranslationFilter@27d6e4e6, org.springframework.security.web.access.intercept.AuthorizationFilter@2b80c070]
+2024-04-16T10:52:37.065+02:00 DEBUG 47343 --- [backend] [  restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2024-04-16T10:52:37.073+02:00 DEBUG 47343 --- [backend] [  restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 4 @ExceptionHandler, 1 ResponseBodyAdvice
+2024-04-16T10:52:37.086+02:00 DEBUG 47343 --- [backend] [  restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 4 @ExceptionHandler, 0 ResponseBodyAdvice
+2024-04-16T10:52:37.211+02:00  INFO 47343 --- [backend] [  restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-04-16T10:52:37.221+02:00  INFO 47343 --- [backend] [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8989 (http) with context path '/em'
+2024-04-16T10:52:37.227+02:00  INFO 47343 --- [backend] [  restartedMain] o.djvmil.em.backend.BackendApplication   : Started BackendApplication in 1.586 seconds (process running for 537.16)
+2024-04-16T10:52:37.228+02:00  INFO 47343 --- [backend] [  restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2024-04-16T10:54:18.047+02:00  INFO 47343 --- [backend] [   File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2024-04-16T10:54:18.057+02:00  INFO 47343 --- [backend] [      Thread-39] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-04-16T10:54:18.058+02:00  INFO 47343 --- [backend] [      Thread-39] com.zaxxer.hikari.HikariDataSource       : HikariPool-10 - Shutdown initiated...
+2024-04-16T10:54:18.060+02:00  INFO 47343 --- [backend] [      Thread-39] com.zaxxer.hikari.HikariDataSource       : HikariPool-10 - Shutdown completed.
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.2.3)
+
+2024-04-16T10:54:18.175+02:00  INFO 47343 --- [backend] [  restartedMain] o.djvmil.em.backend.BackendApplication   : Starting BackendApplication using Java 17 with PID 47343 (/Users/moustaphas.dieme/Desktop/EntretienMentor/EntretienMentorBackend/target/classes started by moustaphas.dieme in /Users/moustaphas.dieme/Desktop/EntretienMentor/EntretienMentorBackend)
+2024-04-16T10:54:18.175+02:00  INFO 47343 --- [backend] [  restartedMain] o.djvmil.em.backend.BackendApplication   : No active profile set, falling back to 1 default profile: "default"
+2024-04-16T10:54:18.462+02:00  INFO 47343 --- [backend] [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-04-16T10:54:18.484+02:00  INFO 47343 --- [backend] [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 22 ms. Found 14 JPA repository interfaces.
+2024-04-16T10:54:18.614+02:00  INFO 47343 --- [backend] [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8989 (http)
+2024-04-16T10:54:18.615+02:00  INFO 47343 --- [backend] [  restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-04-16T10:54:18.615+02:00  INFO 47343 --- [backend] [  restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-04-16T10:54:18.629+02:00  INFO 47343 --- [backend] [  restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/em]     : Initializing Spring embedded WebApplicationContext
+2024-04-16T10:54:18.629+02:00  INFO 47343 --- [backend] [  restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 452 ms
+2024-04-16T10:54:18.665+02:00  INFO 47343 --- [backend] [  restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-11 - Starting...
+2024-04-16T10:54:18.708+02:00  INFO 47343 --- [backend] [  restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-11 - Added connection org.postgresql.jdbc.PgConnection@64905d55
+2024-04-16T10:54:18.709+02:00  INFO 47343 --- [backend] [  restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-11 - Start completed.
+2024-04-16T10:54:18.747+02:00  INFO 47343 --- [backend] [  restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-04-16T10:54:18.749+02:00  INFO 47343 --- [backend] [  restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-04-16T10:54:18.752+02:00  INFO 47343 --- [backend] [  restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-04-16T10:54:18.916+02:00  INFO 47343 --- [backend] [  restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-04-16T10:54:19.064+02:00  INFO 47343 --- [backend] [  restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-04-16T10:54:19.204+02:00 DEBUG 47343 --- [backend] [  restartedMain] o.s.b.w.s.ServletContextInitializerBeans : Mapping filters: springSecurityFilterChain urls=[/*] order=-100, characterEncodingFilter urls=[/*] order=-2147483648, formContentFilter urls=[/*] order=-9900, requestContextFilter urls=[/*] order=-105, JWTFilter urls=[/*] order=2147483647
+2024-04-16T10:54:19.204+02:00 DEBUG 47343 --- [backend] [  restartedMain] o.s.b.w.s.ServletContextInitializerBeans : Mapping servlets: dispatcherServlet urls=[/]
+2024-04-16T10:54:19.654+02:00 DEBUG 47343 --- [backend] [  restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 35 mappings in 'requestMappingHandlerMapping'
+2024-04-16T10:54:19.706+02:00 DEBUG 47343 --- [backend] [  restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**, /swagger-ui*/*swagger-initializer.js, /swagger-ui*/**] in 'resourceHandlerMapping'
+2024-04-16T10:54:19.749+02:00  INFO 47343 --- [backend] [  restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@125df82e, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@2c4fe6a3, org.springframework.security.web.context.SecurityContextHolderFilter@4ff1a8e7, org.springframework.security.web.header.HeaderWriterFilter@46b7c42c, org.springframework.web.filter.CorsFilter@7442cfa5, org.springframework.security.web.authentication.logout.LogoutFilter@46af0076, org.djvmil.em.backend.security.JWTFilter@5f2eb6ea, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@33db705d, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4bb544ae, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@40586f92, org.springframework.security.web.session.SessionManagementFilter@67f50a98, org.springframework.security.web.access.ExceptionTranslationFilter@18ac8f53, org.springframework.security.web.access.intercept.AuthorizationFilter@4fef783f]
+2024-04-16T10:54:19.791+02:00 DEBUG 47343 --- [backend] [  restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2024-04-16T10:54:19.800+02:00 DEBUG 47343 --- [backend] [  restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 4 @ExceptionHandler, 1 ResponseBodyAdvice
+2024-04-16T10:54:19.814+02:00 DEBUG 47343 --- [backend] [  restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 4 @ExceptionHandler, 0 ResponseBodyAdvice
+2024-04-16T10:54:19.947+02:00  INFO 47343 --- [backend] [  restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-04-16T10:54:19.967+02:00  INFO 47343 --- [backend] [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8989 (http) with context path '/em'
+2024-04-16T10:54:19.973+02:00  INFO 47343 --- [backend] [  restartedMain] o.djvmil.em.backend.BackendApplication   : Started BackendApplication in 1.822 seconds (process running for 639.908)
+2024-04-16T10:54:19.974+02:00  INFO 47343 --- [backend] [  restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2024-04-16T10:54:34.587+02:00  INFO 47343 --- [backend] [   File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 11 class path changes (0 additions, 0 deletions, 11 modifications)
+2024-04-16T10:54:34.599+02:00  INFO 47343 --- [backend] [      Thread-43] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-04-16T10:54:34.599+02:00  INFO 47343 --- [backend] [      Thread-43] com.zaxxer.hikari.HikariDataSource       : HikariPool-11 - Shutdown initiated...
+2024-04-16T10:54:34.601+02:00  INFO 47343 --- [backend] [      Thread-43] com.zaxxer.hikari.HikariDataSource       : HikariPool-11 - Shutdown completed.
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.2.3)
+
+2024-04-16T10:54:34.746+02:00  INFO 47343 --- [backend] [  restartedMain] o.djvmil.em.backend.BackendApplication   : Starting BackendApplication using Java 17 with PID 47343 (/Users/moustaphas.dieme/Desktop/EntretienMentor/EntretienMentorBackend/target/classes started by moustaphas.dieme in /Users/moustaphas.dieme/Desktop/EntretienMentor/EntretienMentorBackend)
+2024-04-16T10:54:34.747+02:00  INFO 47343 --- [backend] [  restartedMain] o.djvmil.em.backend.BackendApplication   : No active profile set, falling back to 1 default profile: "default"
+2024-04-16T10:54:35.529+02:00  INFO 47343 --- [backend] [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-04-16T10:54:35.590+02:00  INFO 47343 --- [backend] [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 61 ms. Found 14 JPA repository interfaces.
+2024-04-16T10:54:36.548+02:00  INFO 47343 --- [backend] [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8989 (http)
+2024-04-16T10:54:36.550+02:00  INFO 47343 --- [backend] [  restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-04-16T10:54:36.550+02:00  INFO 47343 --- [backend] [  restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-04-16T10:54:36.578+02:00  INFO 47343 --- [backend] [  restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/em]     : Initializing Spring embedded WebApplicationContext
+2024-04-16T10:54:36.579+02:00  INFO 47343 --- [backend] [  restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1830 ms
+2024-04-16T10:54:36.728+02:00  INFO 47343 --- [backend] [  restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-12 - Starting...
+2024-04-16T10:54:36.815+02:00  INFO 47343 --- [backend] [  restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-12 - Added connection org.postgresql.jdbc.PgConnection@4ff8083c
+2024-04-16T10:54:36.816+02:00  INFO 47343 --- [backend] [  restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-12 - Start completed.
+2024-04-16T10:54:36.864+02:00  INFO 47343 --- [backend] [  restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-04-16T10:54:36.868+02:00  INFO 47343 --- [backend] [  restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-04-16T10:54:36.878+02:00  INFO 47343 --- [backend] [  restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-04-16T10:54:37.175+02:00  INFO 47343 --- [backend] [  restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-04-16T10:54:37.535+02:00  INFO 47343 --- [backend] [  restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-04-16T10:54:37.732+02:00 DEBUG 47343 --- [backend] [  restartedMain] o.s.b.w.s.ServletContextInitializerBeans : Mapping filters: springSecurityFilterChain urls=[/*] order=-100, characterEncodingFilter urls=[/*] order=-2147483648, formContentFilter urls=[/*] order=-9900, requestContextFilter urls=[/*] order=-105, JWTFilter urls=[/*] order=2147483647
+2024-04-16T10:54:37.733+02:00 DEBUG 47343 --- [backend] [  restartedMain] o.s.b.w.s.ServletContextInitializerBeans : Mapping servlets: dispatcherServlet urls=[/]
+2024-04-16T10:54:38.500+02:00 DEBUG 47343 --- [backend] [  restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 35 mappings in 'requestMappingHandlerMapping'
+2024-04-16T10:54:38.606+02:00 DEBUG 47343 --- [backend] [  restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**, /swagger-ui*/*swagger-initializer.js, /swagger-ui*/**] in 'resourceHandlerMapping'
+2024-04-16T10:54:38.671+02:00  INFO 47343 --- [backend] [  restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@31612d2f, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@3a868eda, org.springframework.security.web.context.SecurityContextHolderFilter@746709a4, org.springframework.security.web.header.HeaderWriterFilter@2c03ddc1, org.springframework.web.filter.CorsFilter@1cf5947b, org.springframework.security.web.authentication.logout.LogoutFilter@da0c990, org.djvmil.em.backend.security.JWTFilter@26a2da3d, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@3563478a, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@73c6932, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@52bb4f05, org.springframework.security.web.session.SessionManagementFilter@5fc32fe7, org.springframework.security.web.access.ExceptionTranslationFilter@242cbd27, org.springframework.security.web.access.intercept.AuthorizationFilter@46c11838]
+2024-04-16T10:54:38.749+02:00 DEBUG 47343 --- [backend] [  restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2024-04-16T10:54:38.765+02:00 DEBUG 47343 --- [backend] [  restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 4 @ExceptionHandler, 1 ResponseBodyAdvice
+2024-04-16T10:54:38.787+02:00 DEBUG 47343 --- [backend] [  restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 4 @ExceptionHandler, 0 ResponseBodyAdvice
+2024-04-16T10:54:39.041+02:00  INFO 47343 --- [backend] [  restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-04-16T10:54:39.062+02:00  INFO 47343 --- [backend] [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8989 (http) with context path '/em'
+2024-04-16T10:54:39.071+02:00  INFO 47343 --- [backend] [  restartedMain] o.djvmil.em.backend.BackendApplication   : Started BackendApplication in 4.355 seconds (process running for 659.006)
+2024-04-16T10:54:39.074+02:00  INFO 47343 --- [backend] [  restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2024-04-16T10:55:11.205+02:00  INFO 47343 --- [backend] [ionShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-04-16T10:55:11.220+02:00  INFO 47343 --- [backend] [ionShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-12 - Shutdown initiated...
+2024-04-16T10:55:11.223+02:00  INFO 47343 --- [backend] [ionShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-12 - Shutdown completed.
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  11:38 min
+[INFO] Finished at: 2024-04-16T10:55:11+02:00
+[INFO] ------------------------------------------------------------------------

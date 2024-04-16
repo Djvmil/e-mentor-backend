@@ -1,9 +1,20 @@
 
 -- Utilisateurs
---/ INSERT INTO Users (firstName, lastName, email, password) VALUES
---/ ('John', 'Doe', 'john.doe@example.com', 'hashedpassword123'),
+INSERT INTO Users (firstName, lastName, email, password) VALUES
+(6, 'Djamil', 'Dieme', 'ndieme16@hotmail.com', '$2a$10$jlO.ULLhVmmFZ2m2Q4ofVOF.TVvl51N8eOnEHUu.AaT28QqBDrr0W');
+(7, 'Djibril', 'Diop', 'djidiop89@gmail.com', '$2a$10$jlO.ULLhVmmFZ2m2Q4ofVOF.TVvl51N8eOnEHUu.AaT28QqBDrr0W');
 --/ ('Jane', 'Smith', 'jane.smith@example.com', 'hashedpassword456'),
 --/ ('Alice', 'Johnson', 'alice.johnson@example.com', 'hashedpassword789');
+
+-- Role
+INSERT INTO Roles (roleID, role) VALUES
+(1, 'ADMIN'),
+(1, 'USER');
+
+-- Role
+INSERT INTO UserRole (userID, roleid) VALUES
+(1, 1),
+(2, 2),
 
 -- Entretiens
 --/ INSERT INTO Interviews (title, description, requiredSkills, company, dateTime) VALUES
