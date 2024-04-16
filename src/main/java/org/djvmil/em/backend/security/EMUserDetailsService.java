@@ -27,19 +27,15 @@ public class EMUserDetailsService implements UserDetailsService {
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         logger.debug("Entering in loadUserByUsername Method...");
 
-        System.out.println("Entering in loadUserByUsername Method... :"+ username );
         UserDto userDto = userService.getUser(username);
-        System.out.println("loadUserByUsername response "+ userDto);
         if (userDto == null) {
             logger.error("Username not found: " + username);
             throw new UsernameNotFoundException("User with this username does't exist");
         }
 
-        System.out.println("loadUserByUsername response "+ userDto);
         List<GrantedAuthority> authorities = new ArrayList<>();
         userDto.getRoles().forEach(role -> authorities.add(new SimpleGrantedAuthority(role.getRole())));
 
-        System.out.println("User Authenticated Successfully..!!!");
         logger.info("User Authenticated Successfully..!!!");
         return new UserInfoConfig(username,
                 userDto.getPassword(),

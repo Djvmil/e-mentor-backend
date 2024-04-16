@@ -30,7 +30,6 @@ public class AuthentificationController {
 
     @GetMapping
     public String  homePage(Model model){
-        System.out.println("Tentative d'affichage de home");
         Iterable<UserDto> users = service.allUsers();
         model.addAttribute("usersAtr", users);
 
@@ -39,7 +38,6 @@ public class AuthentificationController {
 
     @GetMapping("/{id}")
     public String getUserById(@PathVariable("id") Long userId, Model model){
-        System.out.println("Tentative d'affichage de home");
         UserDto user = service.getById(userId);
         model.addAttribute("user", user);
 
@@ -48,7 +46,6 @@ public class AuthentificationController {
 
     @GetMapping("add")
     public String addUser(@ModelAttribute UserForm user){
-        System.out.println("Tentative d'affichage de GetMapping = "+user.formatToDB());
 
         return "add-user";
     }
@@ -59,7 +56,6 @@ public class AuthentificationController {
     public String addUser(@Valid @ModelAttribute UserForm userAtt, BindingResult bindingResult, Model model){
     //public String addUser(@ModelAttribute("userForm") User userAtt, Model model){
 
-        System.out.println("Tentative d'affichage de PostMapping = "+userAtt.formatToDB());
         if (bindingResult.hasErrors())
             return "add-user";
 

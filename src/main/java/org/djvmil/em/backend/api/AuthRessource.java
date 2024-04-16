@@ -61,8 +61,6 @@ public class AuthRessource {
     public AuthResponse loginHandler(@RequestBody AuthRequest credentials) throws UserNotFoundException {
         UserDto userDto = userService.getUser(credentials.getUsername());
 
-        System.out.println("userDto find: "+ userDto);
-
         if (userDto != null){
             UsernamePasswordAuthenticationToken authCredentials =
                     new UsernamePasswordAuthenticationToken(credentials.getUsername(), credentials.getPassword());
@@ -70,8 +68,6 @@ public class AuthRessource {
             authenticationManager.authenticate(authCredentials);
 
         }else throw new UserNotFoundException("User with this username does't exist");
-
-        System.out.println("userDto find 2: "+ userDto);
 
         return AuthResponse.builder()
                 .accesToken(jwtService.GenerateToken(userDto.getEmail()))

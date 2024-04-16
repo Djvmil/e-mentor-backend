@@ -96,8 +96,6 @@ public class UserService {
     public UserDto getUser(String username) {
         UserDto userDto;
 
-        System.out.println("getUser(String username) => "+username);
-
         if (Helper.isEmailValid(username))
             userDto = getByEmail(username);
 
