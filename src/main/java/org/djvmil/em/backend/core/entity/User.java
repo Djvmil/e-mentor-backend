@@ -19,6 +19,8 @@ public class User {
     private String lastname;
     private String genre;
     private String country;
+
+    @Column(unique = true)
     private String phoneNumber;
 
     @Column(unique = true)

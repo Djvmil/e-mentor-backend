@@ -5,8 +5,7 @@ import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import org.djvmil.em.backend.config.ErrorResponse;
-import org.djvmil.em.backend.payloads.APIErrorResponse;
+import org.djvmil.em.backend.payloads.APIResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -28,7 +27,7 @@ public class JWTFilter extends OncePerRequestFilter {
 	@Autowired
 	private EMUserDetailsService userDetailsServiceImpl;
 
-	APIErrorResponse errorDetails;
+	APIResponse<String> errorDetails;
 	@Autowired
 	private ObjectMapper mapper;
 	@Override
@@ -57,7 +56,7 @@ public class JWTFilter extends OncePerRequestFilter {
 			}
 
 		}catch (Exception exception){
-			errorDetails = new APIErrorResponse(HttpStatus.UNAUTHORIZED, "Authentication Error");
+			errorDetails = new APIResponse<String>(HttpStatus.UNAUTHORIZED, "Authentication Error");
 			response.setStatus(HttpStatus.UNAUTHORIZED.value());
 			response.setContentType(MediaType.APPLICATION_JSON_VALUE);
 
