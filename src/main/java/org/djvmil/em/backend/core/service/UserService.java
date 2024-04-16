@@ -69,8 +69,12 @@ public class UserService {
 
                     if (role.getRoleID() == null){
                         RoleDto roleSearch = getRole(role.getRole());
-                        if (roleSearch != null)
+                        if (roleSearch != null) {
                             role.setRoleID(roleSearch.getRoleID());
+                            role.setDateUpdated(roleSearch.getDateUpdated());
+                            role.setDateCreated(roleSearch.getDateCreated());
+
+                        }
                     }
                 });
 
