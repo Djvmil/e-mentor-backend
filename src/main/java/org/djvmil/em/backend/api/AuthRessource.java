@@ -45,17 +45,12 @@ public class AuthRessource {
     @PostMapping("/register")
     public APIResponse<String> registerHandler(@Valid @RequestBody AuthRequest user) throws UserRegistrationException {
         try {
-            logger.debug("registerHandler 1 user: ", user);
-            UserDto userDto = userService.registerUser(modelMapper.map(user, UserDto.class));
-            logger.debug("registerHandler 2 user: ", user);
+            userService.registerUser(modelMapper.map(user, UserDto.class));
 
         }catch (Exception ex){
             ex.printStackTrace();
             logger.debug("registerHandler: ", ex);
-            if (ex instanceof UserRegistrationException exception)
-                throw new UserRegistrationException(exception.getMessage());
-            else
-                throw new UserRegistrationException(ex.getMessage());
+            throw new UserRegistrationException(ex.getMessage());
         }
 
         System.out.println("registerHandler -----------");
