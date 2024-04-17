@@ -32,7 +32,7 @@ public class GlobalExceptionHandler {
 		HttpHeaders headers = new HttpHeaders();
 
 		if (ex instanceof UserNotFoundException unfe) {
-			HttpStatus status = HttpStatus.NOT_FOUND;
+			HttpStatus status = HttpStatus.UNAUTHORIZED;
             return handleCustomException(unfe, headers, status, request);
 
 		} else if (ex instanceof NoResourceFoundException exception) {
