@@ -33,6 +33,7 @@ public class AuthRessource {
 
     @Autowired
     private JwtService jwtService;
+
     @Autowired
     private ModelMapper modelMapper;
 
